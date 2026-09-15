@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  summ-jit:
+    build:
+      context: ..
+      dockerfile: docker/jit.dockerfile
+      args:
+        - DEV_AWS_KEY=$DEV_AWS_KEY
+        - DEV_AWS_SECRET=$DEV_AWS_SECRET
+        - DEV_AWS_REGION=$DEV_AWS_REGION
+
+    image: 804136630196.dkr.ecr.us-west-2.amazonaws.com/summarization-service:develop-jit-test
+    environment:
+      - API_KEY=$API_KEY
+    volumes:
+      - ../.github/test_data/input:/home/ubuntu/codebase/data/input-transcripts
+      - ../.github/test_data/output:/home/ubuntu/codebase/data/output-summaries
+    restart: always
+    tty: true
+    # command: tail -f /dev/null
