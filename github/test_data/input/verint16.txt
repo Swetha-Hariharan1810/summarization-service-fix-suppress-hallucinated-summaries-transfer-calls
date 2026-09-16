@@ -1,0 +1,35 @@
+agent: singapore airlines this is john how can i help you today.
+customer: hi  can i check  basically i wanted to check if i can make a change to an existing booking and booking yeah  the booking reference is.
+agent: one moment let me try to pull up that first.
+agent: not by the way can i ask for your name.
+agent: okay miss  just for verification purposes can i ask how many passengers in this booking.
+customer: i just wanted.
+agent: hi mam okay miss brianna provide me the email address that shape in this booking.
+agent: okay ma'am.
+agent: you mentioned that you would like to  change your flight are your booking.
+customer: let me yeah.
+customer: if i change it to the fifth an arrival singapore on the seventh can i do this without an e.
+agent: and this is for subject for availability.
+customer: yeah can you check.
+agent: yes ma'am for your  for your flight for.
+agent: and i mean near the finger per month.
+agent: later right sir.
+customer: it's not a direct flight.
+customer: it's a cycling stop in germany apparently.
+agent: stop over in germany okay.
+agent: singapore yes from singapore to san francisco in which.
+agent: which date ma'am.
+agent: your preferred date now what's your preferred date.
+customer: and i want to leave on the fifth and arrive on the seventh.
+agent: you want to live in fifth of august.
+customer: yes and arrive singapore on the seventh of august.
+agent: i'm on.
+agent: one moment let me try to check other alternative fletcher.
+agent: i don't want your flight is sun i mean new york to frank fourteen from four to singapore.
+customer: yeah that's my current sites right.
+agent: yes ma'am and as per checking here ma'am i do apologise but there is no flight available for fifth of august for j for new york to singapore ma'am.
+customer: okay and so not a door i cannot change and can i change the sixth quickly there no.
+agent: sixth of august.
+agent: okay mam as per checked here for the sixth of august.
+agent: like what i said there is still no seats available for the same class that you have.
+customer: okay that's fine that's fine okay that's fine then okay never mind.

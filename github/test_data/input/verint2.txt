@@ -1,0 +1,36 @@
+Agent:to telcomind net my name is selwyn how may i help you @agent2:how are you 
+ Agent:doing well yourself @agent2:bad though i'm trying to make a payment instruction on telcomind net with a USD account but that we have 
+ Agent: @agent2:i was having some difficulty before i guess the first problem i had was i couldn't see the account on telcomind net even though you know it's there right 
+ Agent: @agent2:i realized that my system administrator had to add that like give me permission to see the account right 
+ Agent: @agent2:i got that done but then i realized they didn't give me privileges to make payment instruction so i couldn't see that account in the payment instructions right 
+ Agent: @agent2:though i could see it like in the account list so i again and they give me a privilege for that so now i could see that account 
+ Agent: @agent2:make create payment instruction and when i go into create payment instruction and fill out all the necessary fields and submit i get an ER error message saying signature requirement is not been defined in the account 
+ Agent: @agent2:the errors 
+ Agent:it's actually an administrator related error it's not something for your access per se but it's something that the account's missing so the account is missing a signature limit or a transaction limit @agent2: 
+ Agent:it would have to in that case it would have to be sent by an administrator @agent2:does that work exactly 
+ Agent:they'll go they'll have the ability to set-up a signature it's called a signature limit through their administrative functions it's just setting up a transaction on it for the account @agent2:so right now like there's nothing right no field right 
+ Agent:in this case there wouldn't have been any limits set-up for that account that's why the error message pops up @agent2:so my system administrator has to fill that out and i can make payments 
+ Agent: @agent2:okay it's very frustrating i've been trying to make this payment for like two weeks 
+ Agent:do you mind if i just grab the off the back of your device i just want to try and take a @agent2: 
+ Agent:at something in your first in your first @agent2:user ID 
+ Agent:your administrator was ever calling our team or do you know if he may have been Simultaneously: Agent2:have no idea 
+ Agent:something i mean let me see here it's to be entirely honest it's something that should have probably been addressed at the time when they initially called to have those changed if they ever did call Agent2: 
+ Agent:don't see them ever calling our team so i can't speak on behalf of the support that they may have gotten it somewhere else but yeah in this case it's just missing it is called a signature limit so if you i'm not sure if you'll be calling or just emailing your administrator or you can tell them that it's that needs to change for this particular account Agent2: 
+ Agent: Agent2:there anything else that might 
+ Agent:take a look here Agent2:possible another error 
+ Agent:this is typically the last one it would be more with the person who's approving the payment that might run into troubles after that from Agent2: 
+ Agent:know they have the right limits and whatnot but from what i can see for your access in the account it looks like that's the only thing that's missing Agent2:i have another question usually we don't make disregarding USD bucks usually we make canadian payments right 
+ Agent:okay Agent2:for that we make a template first 
+ Agent: Agent2:and then based of that template we create payment but for other currencies can i do the same process 
+ Agent:you can always make templates first Agent2: 
+ Agent:you make the template you can you can choose the currency if it will be there if it's going to be the same for each template but when you actually go in and create the payment you can always change the currency if you ever need to if you're ever going to be changing it for any reason Agent2:because before t didn't allow me to do that so i went straight to my instruction 
+ Agent:do you know what type of payment you may have been creating i know there are some restrictions based across different payment types but if you're all sending wires it's just a matter of selecting the currency in the drop down menu Agent2:me just get a hold of it right here okay so it's pretty much the same thing right 
+ Agent:so yeah there should be in that payment amount there's just a drop down for selecting the Agent2: sorry one second okay thanks a lot 
+ Agent:were you able to Agent2:it seems like yeah 
+ Agent:there are some restrictions as far as what currencies you can choose based on where the debit account is located but the drop down menu should still be there for you to select Agent2:i'm gonna do you think it be my work if i do it this way or would i 
+ Agent:do you mean like changing the template will you can change the template for now but it that same error message will show up whenever you try and create a payment from the account at least while there's no limit set-up Agent2:alright thank you 
+ Agent:so you do have like a template or someone that you're going to be paying you could set up a template for them now and that way you can just go and increase the payment later on once the been set-up so that at least you have something in the system Agent2: 
+ Agent: an Agent2: 
+ Agent: Agent2:you very much 
+ Agent:problem Agent2: 
+ Agent: Agent2:
