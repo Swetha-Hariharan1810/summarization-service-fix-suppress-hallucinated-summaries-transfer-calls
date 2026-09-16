@@ -56,6 +56,24 @@ def _has_transfer_language(text: str) -> bool:
     return bool(_TRANSFER_RE.search(text or ""))
 
 
+def _has_transfer_language_any(*variants: str) -> bool:
+    """True if any transcript variant carries transfer language.
+
+    Neither the preprocessed nor the raw transcript is sufficient alone:
+
+    * aggregate_by_channel runs clean_transcript with phrases_removal
+      enabled, which strips "one moment". The "one moment while i get"
+      pattern therefore can never match the preprocessed text.
+    * That same preprocessing folds the typographic apostrophe and drops
+      punctuation, which is what lets "i'?m", "i'?ll" and "you'?re" match
+      "im", "ill" and "youre". Those patterns fail on raw transcripts
+      written with a typographic apostrophe.
+
+    Checking both keeps whichever representation preserved the phrase.
+    """
+    return any(_has_transfer_language(v) for v in variants)
+
+
 def get_summary(text: str, summ_model: SummModel) -> Tuple[str, str]:
     
     raw_text = text
@@ -90,7 +108,7 @@ def get_summary(text: str, summ_model: SummModel) -> Tuple[str, str]:
 
     check_short_transfer = (
         transcript_len <= TRANSFER_MIN_WORDS
-        and _has_transfer_language(text)
+        and _has_transfer_language_any(text, raw_text)
         and has_caller_channel(raw_text)
     )
     if check_short_transfer:
@@ -105,7 +123,7 @@ def get_summary(text: str, summ_model: SummModel) -> Tuple[str, str]:
     input_len = None
     check_transfer = (
         TRANSFER_MIN_WORDS < transcript_len <= TRANSFER_MAX_WORDS
-        and _has_transfer_language(text)
+        and _has_transfer_language_any(text, raw_text)
         and has_caller_channel(raw_text)
     )
     if check_transfer:
