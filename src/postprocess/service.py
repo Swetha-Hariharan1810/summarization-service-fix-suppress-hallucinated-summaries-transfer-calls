@@ -26,9 +26,9 @@ def strip_wrapping_quotes(text):
         if closer and len(body) > 1 and body.endswith(closer):
             text = (body[1:-1].strip() + trailing).strip()
             changed = True
-    # Unbalanced opener from a truncated generation: drop it only when that
-    # quote character appears nowhere else in the summary.
-    if len(text) > 1 and text[0] in _QUOTE_PAIRS and text.count(text[0]) == 1:
+    # Unbalanced opener from a truncated generation: drop it only when this
+    # opener's matching closer appears nowhere else in the summary.
+    if len(text) > 1 and text[0] in _QUOTE_PAIRS and _QUOTE_PAIRS[text[0]] not in text[1:]:
         text = text[1:].strip()
     return text
 
