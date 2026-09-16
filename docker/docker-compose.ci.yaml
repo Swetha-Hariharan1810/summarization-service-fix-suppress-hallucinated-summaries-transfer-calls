@@ -44,7 +44,7 @@ services:
       - SUMM_MODEL_DOWNLOAD_PATH=https://birchdevstorage.blob.core.windows.net/birchmodels/_DEV-RELEASE/summ/v9.general.zip
       - SUMM_MODEL_NAME=finetune.v9.fix.bh.review.pre2.lr.2e-05.tnu.1500.checkpoint_best
 
-    restart: always
+    restart: 'no'
     tty: true
     # keeps running container after exit
     # command: tail -f /dev/null

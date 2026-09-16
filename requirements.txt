@@ -5,7 +5,8 @@ boto3==1.26.13
 cython
 PyYAML
 wheel>=0.38.1
-transformers>=4.30.0
+transformers==4.30.2
+huggingface_hub==0.16.4
 requests>=2.31.0
 cryptography>=41.0.0
 azure-storage-blob>=12.9.0
