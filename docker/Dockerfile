@@ -1,4 +1,4 @@
-FROM ubuntu:23.04
+FROM ubuntu:22.04
 
 RUN apt update -y \
     && apt upgrade -y \
@@ -28,15 +28,15 @@ USER $USER_NAME
 
 
 COPY ./requirements.txt ./requirements.txt
-RUN pip install --upgrade pip --break-system-packages && pip install -r ./requirements.txt --break-system-packages
+RUN pip install --upgrade pip && pip install -r ./requirements.txt
 
-RUN pip install torch==2.0.0+cpu torchaudio==2.0.1 --extra-index-url https://download.pytorch.org/whl/cpu  --break-system-packages
+RUN pip install torch==2.0.0+cpu torchaudio==2.0.1 --extra-index-url https://download.pytorch.org/whl/cpu
 
 COPY --chown=$USER_NAME:$GROUP_NAME ./src ./src
 
 WORKDIR /home/appuser/src/fairseqForkSepFix
 RUN python3 setup.py build_ext --inplace
-RUN pip install . --break-system-packages
+RUN pip install .
 
 WORKDIR /home/appuser/
 
