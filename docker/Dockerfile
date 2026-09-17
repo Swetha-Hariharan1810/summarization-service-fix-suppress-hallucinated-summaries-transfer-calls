@@ -43,6 +43,12 @@ USER $USER_NAME
 COPY --chown=$USER_NAME:$GROUP_NAME ./requirements.txt ./requirements.txt
 RUN pip install --upgrade pip && pip install -r ./requirements.txt
 
+# torch is held at 2.0.0 by fairseq, not by choice. CVE-2025-32434 (critical)
+# and CVE-2024-31580 both want a newer torch, but torch 2.6 changed torch.load's
+# weights_only default to True and fairseq's load_checkpoint_to_cpu calls it
+# bare - our checkpoints carry an argparse.Namespace and an omegaconf container,
+# so the load raises UnpicklingError. Bumping this line alone will break model
+# loading at startup. docker/SECURITY-EXCEPTIONS.md section 1 has the details.
 RUN pip install torch==2.0.0+cpu torchaudio==2.0.1 --extra-index-url https://download.pytorch.org/whl/cpu
 
 COPY --chown=$USER_NAME:$GROUP_NAME ./src ./src

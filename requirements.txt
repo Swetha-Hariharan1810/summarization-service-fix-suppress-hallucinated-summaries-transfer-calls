@@ -11,8 +11,12 @@ wheel>=0.38.1
 # 4.48.0 needs hub >=0.24.0, and 0.25.2 is the last release that still has
 # cached_download - that pair satisfies both.
 # Clears CVE-2024-3568 (critical), CVE-2024-11393, CVE-2024-12720.
-# Still open here: CVE-2025-6638 (needs 4.53.0) and CVE-2026-5241 (needs 5.5.0);
-# both require moving off sentence-transformers 2.2.2 first.
+# Still open here: CVE-2025-6638 (needs 4.53.0), CVE-2026-4372 (needs 5.3.0),
+# CVE-2026-1839 (needs 5.0.0rc3) and CVE-2026-5241 (needs 5.5.0). Moving off
+# sentence-transformers 2.2.2 is necessary but NOT sufficient: transformers 5.x
+# declares torch>=2.4, and torch>=2.6 flips torch.load's weights_only default to
+# True, which breaks fairseq's checkpoint load. See docker/SECURITY-EXCEPTIONS.md
+# section 1 for the full chain and what has to change to unblock it.
 transformers==4.48.0
 huggingface_hub==0.25.2
 requests>=2.31.0
