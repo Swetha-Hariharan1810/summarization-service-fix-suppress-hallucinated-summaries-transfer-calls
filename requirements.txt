@@ -5,8 +5,16 @@ boto3==1.26.13
 cython
 PyYAML
 wheel>=0.38.1
-transformers==4.30.2
-huggingface_hub==0.16.4
+# transformers 4.48.0 is the ceiling while sentence-transformers is pinned at
+# 2.2.2: it imports cached_download from huggingface_hub, which disappeared in
+# hub 0.26.0. transformers 4.53.0 requires hub >=0.30.0, so it cannot coexist.
+# 4.48.0 needs hub >=0.24.0, and 0.25.2 is the last release that still has
+# cached_download - that pair satisfies both.
+# Clears CVE-2024-3568 (critical), CVE-2024-11393, CVE-2024-12720.
+# Still open here: CVE-2025-6638 (needs 4.53.0) and CVE-2026-5241 (needs 5.5.0);
+# both require moving off sentence-transformers 2.2.2 first.
+transformers==4.48.0
+huggingface_hub==0.25.2
 requests>=2.31.0
 cryptography>=41.0.0
 azure-storage-blob>=12.9.0
