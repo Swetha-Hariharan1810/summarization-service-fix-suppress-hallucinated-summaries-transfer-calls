@@ -1,12 +1,17 @@
-FROM ubuntu:22.04
+# Two stages on purpose.
+#
+# The compiler toolchain drags in linux-libc-dev (build-essential -> libc6-dev
+# -> linux-libc-dev), which is nothing but kernel headers but still carries
+# every open kernel CVE into the scan report. Confining it to a builder stage
+# that is never shipped keeps those findings out of the published image.
+#
+# The runtime stage installs with --no-install-recommends so python3-pip cannot
+# pull python3-dev (and libc6-dev, and the headers) back in behind our back.
 
-RUN apt update -y \
-    && apt upgrade -y \
-    && apt install python3 -y \
-    && apt install python3-pip -y \
-    && rm -rf /var/lib/apt/lists/* \
-    && apt autoremove -y \
-    && apt autoclean
+# --------------------------------------------------------------------------
+# builder - has the toolchain; nothing from this stage ships except ~/.local
+# --------------------------------------------------------------------------
+FROM ubuntu:22.04 AS builder
 
 ARG USER_ID=999
 ARG GROUP_ID=1099
@@ -14,33 +19,74 @@ ARG USER_NAME=appuser
 ARG GROUP_NAME=appgroup
 ARG DEBIAN_FRONTEND=noninteractive
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+RUN apt-get update -y \
+    && apt-get upgrade -y \
+    && apt-get install -y --no-install-recommends \
+        python3 \
+        python3-pip \
+        python3-dev \
+        build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN addgroup --gid $GROUP_ID $GROUP_NAME \
     && adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID --home /home/$USER_NAME $USER_NAME \
     && chown -R $USER_NAME:$GROUP_NAME /home/$USER_NAME
 
-
-WORKDIR /home/appuser
-RUN chown -R $USER_NAME:$GROUP_NAME /home
+WORKDIR /home/$USER_NAME
 USER $USER_NAME
 
-
-COPY ./requirements.txt ./requirements.txt
+# Everything below installs into /home/appuser/.local, which is the only tree
+# the runtime stage copies out.
+COPY --chown=$USER_NAME:$GROUP_NAME ./requirements.txt ./requirements.txt
 RUN pip install --upgrade pip && pip install -r ./requirements.txt
 
 RUN pip install torch==2.0.0+cpu torchaudio==2.0.1 --extra-index-url https://download.pytorch.org/whl/cpu
 
 COPY --chown=$USER_NAME:$GROUP_NAME ./src ./src
 
-WORKDIR /home/appuser/src/fairseqForkSepFix
+WORKDIR /home/$USER_NAME/src/fairseqForkSepFix
 RUN python3 setup.py build_ext --inplace
 RUN pip install .
 
-WORKDIR /home/appuser/
+# --------------------------------------------------------------------------
+# runtime - interpreter and libraries only, no compiler, no kernel headers
+# --------------------------------------------------------------------------
+FROM ubuntu:22.04 AS runtime
 
-USER root
-RUN apt-get purge gcc build-essential -y && apt-get -y autoremove
-ENV PATH "/home/${USER_NAME}/.local/bin:${PATH}"
+ARG USER_ID=999
+ARG GROUP_ID=1099
+ARG USER_NAME=appuser
+ARG GROUP_NAME=appgroup
+ARG DEBIAN_FRONTEND=noninteractive
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PATH="/home/${USER_NAME}/.local/bin:${PATH}"
+
+# python3-pip is here because docker-compose.ci.yaml pip-installs the test
+# requirements at container start. libstdc++6/libgomp1 are the shared runtime
+# libraries the compiled extensions and torch link against - runtime libs only,
+# no headers, so they bring no linux-libc-dev with them.
+RUN apt-get update -y \
+    && apt-get upgrade -y \
+    && apt-get install -y --no-install-recommends \
+        python3 \
+        python3-pip \
+        libstdc++6 \
+        libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN addgroup --gid $GROUP_ID $GROUP_NAME \
+    && adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID --home /home/$USER_NAME $USER_NAME \
+    && chown -R $USER_NAME:$GROUP_NAME /home/$USER_NAME
+
+WORKDIR /home/$USER_NAME
 USER $USER_NAME
+
+# Site-packages and the in-place built extensions, exactly as the builder left
+# them.
+COPY --from=builder --chown=$USER_NAME:$GROUP_NAME /home/${USER_NAME}/.local /home/${USER_NAME}/.local
+COPY --from=builder --chown=$USER_NAME:$GROUP_NAME /home/${USER_NAME}/src /home/${USER_NAME}/src
