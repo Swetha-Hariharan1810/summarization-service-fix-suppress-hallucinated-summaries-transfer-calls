@@ -51,6 +51,13 @@ WORKDIR /home/$USER_NAME/src/fairseqForkSepFix
 RUN python3 setup.py build_ext --inplace
 RUN pip install .
 
+# The test dependencies are installed here, not at container start, so that the
+# runtime stage does not need python3-pip. docker-compose.ci.yaml used to run
+# "pip install -r src/summ_service/test/requirements.txt" as its first command;
+# that line is gone now and these packages arrive through the .local copy.
+WORKDIR /home/$USER_NAME
+RUN pip install -r ./src/summ_service/test/requirements.txt
+
 # --------------------------------------------------------------------------
 # runtime - interpreter and libraries only, no compiler, no kernel headers
 # --------------------------------------------------------------------------
@@ -66,15 +73,23 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV PATH="/home/${USER_NAME}/.local/bin:${PATH}"
 
-# python3-pip is here because docker-compose.ci.yaml pip-installs the test
-# requirements at container start. libstdc++6/libgomp1 are the shared runtime
-# libraries the compiled extensions and torch link against - runtime libs only,
-# no headers, so they bring no linux-libc-dev with them.
+# No python3-pip on purpose. Ubuntu 22.04 ships pip 22.0.2, which vendors
+# certifi 2022.x in pip/_vendor, and no fixed package exists for jammy - that
+# bundled copy is CVE-2023-37920 (critical) and carries the msgpack and urllib3
+# findings too. Everything the image needs is installed in the builder stage and
+# arrives through the .local copy below, so pip is not needed at run time.
+#
+# ca-certificates was previously pulled in as a dependency of python3-pip and is
+# listed explicitly now so TLS verification keeps working.
+#
+# libstdc++6/libgomp1 are the shared runtime libraries the compiled extensions
+# and torch link against - runtime libs only, no headers, so they bring no
+# linux-libc-dev with them.
 RUN apt-get update -y \
     && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends \
         python3 \
-        python3-pip \
+        ca-certificates \
         libstdc++6 \
         libgomp1 \
     && rm -rf /var/lib/apt/lists/*

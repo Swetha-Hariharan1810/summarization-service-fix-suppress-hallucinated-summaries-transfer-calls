@@ -18,8 +18,10 @@ services:
     tty: true
     entrypoint: [ "/bin/sh", "-c" ]
     command:
+      # The test requirements are baked into the image by docker/Dockerfile now.
+      # They used to be pip-installed here, which is why the runtime stage had to
+      # carry python3-pip; that package is gone to clear CVE-2023-37920.
       - |
-        pip install -r src/summ_service/test/requirements.txt
         pytest -x -vv --log-cli-level=WARNING -s src/summ_service/test/test_summ.py
 
   summ-service:
