@@ -11,3 +11,6 @@ requests>=2.31.0
 cryptography>=41.0.0
 azure-storage-blob>=12.9.0
 azure-identity>=1.10.0
+# torch 2.0.0 is compiled against the numpy 1.x C-API; numpy 2.x makes
+# every tensor->array conversion fail with "Numpy is not available".
+numpy<2
