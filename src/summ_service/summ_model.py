@@ -1,3 +1,6 @@
+import contextlib
+import functools
+import inspect
 import logging
 import math
 import multiprocessing
@@ -15,6 +18,52 @@ from . import az_util, s3_util
 from .config import SummConfig
 
 logger = logging.getLogger(__name__)
+
+
+@contextlib.contextmanager
+def _trusted_checkpoint_load():
+    """Let fairseq load our own checkpoint under torch >= 2.6.
+
+    torch 2.6 changed the default of ``torch.load``'s ``weights_only`` argument
+    from False to True. fairseq's ``load_checkpoint_to_cpu`` calls
+    ``torch.load`` without passing it, and our checkpoints are not plain
+    tensors: ``_upgrade_state_dict`` reads an ``argparse.Namespace`` out of
+    ``state["args"]`` and an omegaconf container out of ``state["cfg"]``.
+    Neither is something the weights-only unpickler will construct, so the load
+    raises UnpicklingError before the model is ever built.
+
+    The checkpoint is our own build artifact, fetched over TLS from the Azure
+    blob container or S3 bucket named in SummConfig - the same trust boundary
+    the service has always had. Restoring the pre-2.6 behaviour for this one
+    call is therefore not a change in exposure, and scoping it to the call
+    keeps the weights-only default everywhere else, including the
+    ``SentenceTransformer`` load below.
+
+    Model loading happens once, at startup, before any worker threads exist, so
+    swapping the module attribute is safe here. Do not reuse this around
+    anything that runs concurrently.
+    """
+    original = torch.load
+    try:
+        takes_weights_only = "weights_only" in inspect.signature(original).parameters
+    except (TypeError, ValueError):
+        # Not introspectable. Our pin is well past 2.6, so assume it takes it.
+        takes_weights_only = True
+    if not takes_weights_only:
+        # torch < 1.13 has no such argument; nothing to do.
+        yield
+        return
+
+    @functools.wraps(original)
+    def _load(*args, **kwargs):
+        kwargs.setdefault("weights_only", False)
+        return original(*args, **kwargs)
+
+    torch.load = _load
+    try:
+        yield
+    finally:
+        torch.load = original
 
 
 class SummModel(torch.nn.Module):
@@ -233,9 +282,10 @@ class SummModel(torch.nn.Module):
                     download_job_cnt += 1
 
         logger.info("Start loading models ...")
-        summarizer = TransformerModel.from_pretrained(
-            model_dir, checkpoint_file=f"{config.model_name}.pt"
-        )
+        with _trusted_checkpoint_load():
+            summarizer = TransformerModel.from_pretrained(
+                model_dir, checkpoint_file=f"{config.model_name}.pt"
+            )
         summarizer.eval()
         # summarizer = torch.compile(summarizer, mode="reduce-overhead")
         if config.general_model:

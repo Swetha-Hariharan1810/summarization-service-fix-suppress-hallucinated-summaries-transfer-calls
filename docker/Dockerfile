@@ -43,13 +43,20 @@ USER $USER_NAME
 COPY --chown=$USER_NAME:$GROUP_NAME ./requirements.txt ./requirements.txt
 RUN pip install --upgrade pip && pip install -r ./requirements.txt
 
-# torch is held at 2.0.0 by fairseq, not by choice. CVE-2025-32434 (critical)
-# and CVE-2024-31580 both want a newer torch, but torch 2.6 changed torch.load's
-# weights_only default to True and fairseq's load_checkpoint_to_cpu calls it
-# bare - our checkpoints carry an argparse.Namespace and an omegaconf container,
-# so the load raises UnpicklingError. Bumping this line alone will break model
-# loading at startup. docker/SECURITY-EXCEPTIONS.md section 1 has the details.
-RUN pip install torch==2.0.0+cpu torchaudio==2.0.1 --extra-index-url https://download.pytorch.org/whl/cpu
+# 2.11.0 clears CVE-2025-32434 (critical, needs 2.6.0) and CVE-2024-31580
+# (needs 2.2.0), and is the newest release with a matching torchaudio -
+# torchaudio pins torch exactly and stops at 2.11.0, so the pair moves together.
+#
+# What made this bump possible: torch 2.6 changed torch.load's weights_only
+# default to True, and fairseq's load_checkpoint_to_cpu calls torch.load bare
+# against a checkpoint holding an argparse.Namespace and an omegaconf container.
+# _trusted_checkpoint_load in src/summ_service/summ_model.py restores the old
+# default around that one call. Bumping this line without that shim in place
+# breaks model loading at startup.
+#
+# The +cpu local version and the extra index keep the nvidia-* CUDA wheels -
+# several GB of them - out of the image.
+RUN pip install torch==2.11.0+cpu torchaudio==2.11.0 --extra-index-url https://download.pytorch.org/whl/cpu
 
 COPY --chown=$USER_NAME:$GROUP_NAME ./src ./src
 

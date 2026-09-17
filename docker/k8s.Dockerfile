@@ -21,7 +21,9 @@ RUN cd /home/${USER_NAME} && \
     && bash Miniconda3-latest-Linux-x86_64.sh -b \
     && rm -f Miniconda3-latest-Linux-x86_64.sh
 
-RUN conda update conda && conda install python=3.9 -y
+# python 3.10, not 3.9: requirements.txt now needs sentence-transformers
+# 6.0.1 and transformers 5.17.0, both of which declare requires-python >=3.10.
+RUN conda update conda && conda install python=3.10 -y
 
 WORKDIR /home/ubuntu/codebase/
 

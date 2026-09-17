@@ -23,20 +23,21 @@ package is affected at all.
 
 ---
 
-## 1. Fixable, and currently blocked behind one dependency
+## 1. Fixable - fixed
 
-Six findings are against Python packages that do have fixed releases:
+Every Python-package finding in the report had a fixed release available, and
+all of them are taken now:
 
-| CVE | Severity | Package | Fixed in |
-| --- | --- | --- | --- |
-| CVE-2025-32434 | critical 9.3 | `torch` 2.0.0+cpu | 2.6.0 |
-| CVE-2024-31580 | high 8.7 | `torch` 2.0.0+cpu | 2.2.0 |
-| CVE-2026-5241 | critical 9.6 | `transformers` 4.48.0 | 5.5.0 |
-| CVE-2026-4372 | high 7.8 | `transformers` 4.48.0 | 5.3.0 |
-| CVE-2026-1839 | high 7.8 | `transformers` 4.48.0 | 5.0.0rc3 |
-| CVE-2025-6638 | high | `transformers` 4.48.0 | 4.53.0 |
+| CVE | Severity | Was | Now | Fixed in |
+| --- | --- | --- | --- | --- |
+| CVE-2025-32434 | critical 9.3 | `torch` 2.0.0+cpu | 2.11.0+cpu | 2.6.0 |
+| CVE-2024-31580 | high 8.7 | `torch` 2.0.0+cpu | 2.11.0+cpu | 2.2.0 |
+| CVE-2026-5241 | critical 9.6 | `transformers` 4.48.0 | 5.17.0 | 5.5.0 |
+| CVE-2026-4372 | high 7.8 | `transformers` 4.48.0 | 5.17.0 | 5.3.0 |
+| CVE-2026-1839 | high 7.8 | `transformers` 4.48.0 | 5.17.0 | 5.0.0rc3 |
+| CVE-2025-6638 | high | `transformers` 4.48.0 | 5.17.0 | 4.53.0 |
 
-They are not independent. The constraint chain is:
+None of these could be taken on its own. The constraint chain was:
 
     sentence-transformers 2.2.2  imports cached_download  ->  huggingface_hub < 0.26
     huggingface_hub < 0.26                                ->  transformers <= 4.52
@@ -44,37 +45,49 @@ They are not independent. The constraint chain is:
     torch >= 2.6                 flips torch.load's weights_only default to True
     weights_only=True            breaks fairseq checkpoint loading
 
-Each link is checkable:
+So the whole group was gated on the last link, not on the pins. It was opened
+in this order:
 
-* `sentence_transformers/util.py` in 2.2.2 does
-  `from huggingface_hub import ... cached_download`. 2.3.0 is the first release
-  that drops it, so **any** `sentence-transformers >= 2.3.0` lifts the
-  `huggingface_hub` ceiling. For `transformers` 5.x specifically the floor is
-  `sentence-transformers >= 5.4.0`, which is the first to widen its pin from
-  `transformers <5.0.0` to `transformers <6.0.0`.
-* `transformers` 5.x declares `torch>=2.4` in its `torch` extra. It cannot be
-  combined with the `torch` 2.0.0 this image pins.
-* fairseq's `load_checkpoint_to_cpu` calls
-  `torch.load(f, map_location=torch.device("cpu"))` with no `weights_only`
-  argument (`fairseq/checkpoint_utils.py`, ~line 315). Our checkpoints carry an
-  `argparse.Namespace` under `state["args"]` and an omegaconf container under
-  `state["cfg"]` - `_upgrade_state_dict` reads both. Under torch >= 2.6 that
-  load raises `UnpicklingError` before the model is ever constructed.
+1. **The fairseq load.** `load_checkpoint_to_cpu` calls
+   `torch.load(f, map_location=torch.device("cpu"))` with no `weights_only`
+   argument (`fairseq/checkpoint_utils.py`, ~line 315). Our checkpoints are not
+   plain tensors - `_upgrade_state_dict` reads an `argparse.Namespace` out of
+   `state["args"]` and an omegaconf container out of `state["cfg"]` - so under
+   torch >= 2.6 the load raises `UnpicklingError` before the model is built.
+   `_trusted_checkpoint_load` in `src/summ_service/summ_model.py` restores the
+   pre-2.6 default around that one call and puts it back afterwards. The
+   checkpoint is our own build artifact fetched over TLS from the Azure blob
+   container or S3 bucket named in `SummConfig`, so this is the trust boundary
+   the service already had, not a new one. It is deliberately *not* applied to
+   the `SentenceTransformer` load, which keeps the weights-only default.
+2. **torch 2.0.0 -> 2.11.0+cpu.** 2.6.0 is the floor the advisory names; 2.11.0
+   is the newest release with a matching `torchaudio`, which pins torch exactly
+   and stops there. fairseq needs `torchaudio`, so the two move together.
+3. **sentence-transformers 2.2.2 -> 6.0.1.** 2.3.0 was enough to lift the
+   `huggingface_hub` ceiling, but transformers 5.17.0 requires
+   `huggingface_hub >=1.5.0,<2.0`, and the 6.x line is the one built against
+   hub 1.x. 6.0.1 requires `transformers >=5.0.0,<6.0.0` and `torch >=2.2`.
+4. **transformers 4.48.0 -> 5.17.0.** 5.5.0 is the floor for the critical, but
+   5.17.0 also clears CVE-2026-9856 (needs 5.10.x), which 5.5.x would have
+   introduced into the next report.
 
-So the whole group is gated on the fairseq fork, not on the pins in
-`requirements.txt`. Clearing it means passing `weights_only=False` at that call
-site - which is the behaviour torch 2.0.0 already has today, and is defensible
-because the checkpoint is our own artifact, fetched over TLS from our own Azure
-blob container or S3 bucket, not user input. That change belongs either in
-`fairseqForkSepFix` or, scoped to the one call, around
-`TransformerModel.from_pretrained` in `src/summ_service/summ_model.py`.
+Two of the six were additionally unreachable in this service, which is worth
+knowing if a rollback is ever needed:
 
-Until then these six stay open and need exceptions. `CVE-2026-5241` has an
-additional, independent argument - see section 4.
+* **CVE-2026-1839** is a flaw in `transformers.Trainer._load_rng_state`. This
+  service does no training; it only ever calls `SentenceTransformer(<local
+  dir>)` for inference.
+* **CVE-2026-4372** and **CVE-2026-5241** both require loading a model from an
+  attacker-controlled repository. `SummModel.from_pretrained` unpacks a zip from
+  our own storage and hands `SentenceTransformer` a local directory path. There
+  is no `AutoModel.from_pretrained("<hub repo id>")` call anywhere in `src/`.
 
-Note that `CVE-2026-1839` is already unreachable for a second reason: it is a
-flaw in `transformers.Trainer._load_rng_state`, and this service does no
-training. It only ever calls `SentenceTransformer(<local dir>)` for inference.
+### What this does not do
+
+The build will still fail `--fail-on-min-severity high`. Everything in sections
+2 and 3 below is an OS package with no fixed version in any supported Ubuntu
+release, so no change in this repository clears it. Those need exceptions filed
+in the Tenable console before the scan can go green.
 
 ---
 
@@ -127,38 +140,17 @@ putting in the exception alongside the tracker status:
 
 ---
 
-## 4. Findings against code that is not in the shipped version
+## 4. Findings that do not apply to this image
 
-### CVE-2026-5241 - critical 9.6 - transformers
+### CVE-2026-5241 - no longer needs an exception
 
-Reported because the advisory lists `Resolution: 5.5.0` and our pin is below it.
+This was previously argued as a wrong match, on the grounds that the `LightGlue`
+model the advisory describes did not exist in the transformers 4.x line. That
+argument was sound but is now moot: `transformers` is pinned at 5.17.0, past the
+5.5.0 the advisory names as its resolution, so the finding is simply fixed.
+Retire any exception filed for it rather than renewing it.
 
-The advisory describes a flaw in "the LightGlue model loading path of
-huggingface/transformers version 5.2.0": `LightGlueConfig` reads
-`trust_remote_code` out of an untrusted `config.json` and passes it into a
-nested `AutoConfig.from_pretrained()` call.
-
-`LightGlue` did not exist in the 4.x line. The module is absent from both the
-version this image used to pin and the one it pins now:
-
-    transformers 4.30.2 - no lightglue module
-    transformers 4.48.0 - no lightglue module
-
-Verify against a built image:
-
-    docker run --rm <image> sh -c \
-      'ls /home/appuser/.local/lib/python3.10/site-packages/transformers/models/ \
-       | grep -i lightglue || echo "not present"'
-
-The vulnerable file is not shipped. This finding stays invalid for as long as
-`requirements.txt` pins transformers below 5.x; if it is ever raised to a 5.x
-release, re-check it rather than renewing the exception.
-
-Both this and `CVE-2026-4372` additionally require loading a model from an
-attacker-controlled repository. This service never does: `SummModel.from_pretrained`
-in `src/summ_service/summ_model.py` unpacks a zip from our own Azure blob
-container or S3 bucket and hands `SentenceTransformer` a local directory path.
-There is no `AutoModel.from_pretrained("<hub repo id>")` call anywhere in `src/`.
+The same goes for CVE-2026-4372, CVE-2026-1839 and CVE-2025-6638 - see section 1.
 
 ### Package mis-attribution
 

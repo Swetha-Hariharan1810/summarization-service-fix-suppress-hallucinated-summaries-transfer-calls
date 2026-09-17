@@ -16,7 +16,9 @@ RUN wget \
     && bash Miniconda3-latest-Linux-x86_64.sh -b \
     && rm -f Miniconda3-latest-Linux-x86_64.sh
 
-RUN conda update conda && conda install python=3.9
+# python 3.10, not 3.9: requirements.txt now needs sentence-transformers
+# 6.0.1 and transformers 5.17.0, both of which declare requires-python >=3.10.
+RUN conda update conda && conda install python=3.10
 
 COPY ./requirements.txt ./requirements.txt
 RUN pip install --upgrade pip && pip install -r ./requirements.txt
