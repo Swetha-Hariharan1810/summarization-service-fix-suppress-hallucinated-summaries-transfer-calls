@@ -18,6 +18,16 @@ services:
     tty: true
     entrypoint: [ "/bin/sh", "-c" ]
     command:
+      # This install is kept so the compose file also works against images built
+      # from an older docker/Dockerfile that does not bake the test requirements
+      # in. Against a current image it is a no-op - everything is already
+      # satisfied - and it costs a few seconds.
+      #
+      # It does not bring back CVE-2023-37920. That finding is against the apt
+      # package python3-pip (pip 22.0.2, vendoring certifi 2022.x), which the
+      # runtime stage no longer installs. The pip resolved here is the upgraded
+      # one in /home/appuser/.local/bin, put there by the builder stage and
+      # reached through ENV PATH.
       - |
         pip install -r src/summ_service/test/requirements.txt
         pytest -x -vv --log-cli-level=WARNING -s src/summ_service/test/test_summ.py
