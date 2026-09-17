@@ -51,10 +51,11 @@ WORKDIR /home/$USER_NAME/src/fairseqForkSepFix
 RUN python3 setup.py build_ext --inplace
 RUN pip install .
 
-# The test dependencies are installed here, not at container start, so that the
-# runtime stage does not need python3-pip. docker-compose.ci.yaml used to run
-# "pip install -r src/summ_service/test/requirements.txt" as its first command;
-# that line is gone now and these packages arrive through the .local copy.
+# The test dependencies are installed here, not only at container start, so that
+# the runtime stage does not need the apt python3-pip package. They reach the
+# runtime image through the .local copy below. docker-compose.ci.yaml still runs
+# the same install before pytest, which is a no-op against this image and keeps
+# that file working against older images that do not bake them in.
 WORKDIR /home/$USER_NAME
 RUN pip install -r ./src/summ_service/test/requirements.txt
 
