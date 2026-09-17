@@ -1,18 +1,32 @@
 sentence-transformers==2.2.2
 pika==1.3.2
-pydantic==1.10.9
-boto3==1.26.13
+# pydantic stays on the 1.x line - src/config.py imports BaseSettings, which
+# pydantic 2 moved out into the separate pydantic-settings package. 1.10.26 is
+# the newest 1.10.x and clears CVE-2024-3772 (ReDoS, fixed in 1.10.13).
+pydantic==1.10.26
+# boto3 1.26.x pulled botocore 1.29.x, which pins urllib3 <1.27 and was the only
+# reason urllib3 sat at 1.26.20. Current botocore allows urllib3 <3, which is
+# what lets the pin below actually take effect.
+boto3==1.43.96
+# Clears CVE-2026-21441 (needs 2.6.3), CVE-2025-66418 and CVE-2025-66471 (2.6.0),
+# and CVE-2026-44431 and CVE-2026-44432 (2.7.0). Unreachable until boto3 moves.
+urllib3>=2.7.0
 cython
 PyYAML
 wheel>=0.38.1
-# transformers 4.48.0 is the ceiling while sentence-transformers is pinned at
-# 2.2.2: it imports cached_download from huggingface_hub, which disappeared in
-# hub 0.26.0. transformers 4.53.0 requires hub >=0.30.0, so it cannot coexist.
-# 4.48.0 needs hub >=0.24.0, and 0.25.2 is the last release that still has
-# cached_download - that pair satisfies both.
-# Clears CVE-2024-3568 (critical), CVE-2024-11393, CVE-2024-12720.
-# Still open here: CVE-2025-6638 (needs 4.53.0) and CVE-2026-5241 (needs 5.5.0);
-# both require moving off sentence-transformers 2.2.2 first.
+# transformers 4.48.0 is the ceiling, and the binding constraint is torch 2.0.0,
+# not sentence-transformers as an earlier version of this comment claimed.
+# Measured against torch 2.0.0 (load a BERT, save it, reload it, encode):
+#   4.49.0  - works
+#   4.50.0+ - importing transformers.models.bert.modeling_bert dies with
+#             "module 'torch' has no attribute 'compiler'" (added in torch 2.1)
+#   4.52.4+ - also logs "Disabling PyTorch because PyTorch >= 2.1 is required"
+#             and is_torch_available() goes False, so the failure turns quiet
+# Every remaining transformers CVE needs 4.50.0 or newer (CVE-2025-2099 4.50.0;
+# CVE-2025-6638 and CVE-2025-6921 4.53.0; CVE-2026-1839, CVE-2026-4372 and
+# CVE-2026-5241 the 5.x line), so none of them can be fixed before torch moves
+# to 2.1+. See docker/SECURITY-EXCEPTIONS.md.
+# This pin clears CVE-2024-3568 (critical), CVE-2024-11393, CVE-2024-12720.
 transformers==4.48.0
 huggingface_hub==0.25.2
 requests>=2.31.0
