@@ -1,0 +1,22 @@
+{
+    "Caller checking on case status": [
+        "Caller checking on case status."
+    ],
+    "Caller requesting reason for authorization denial": [
+        "Caller requesting reason for authorization denial."
+    ],
+    "Caller requesting to change service location": [
+        "Caller requesting to change service location.",
+        "Caller providing new facility name and address.",
+        "Caller confirming new facility address.",
+        "Caller updating facility.",
+        "Caller updating facility address."
+    ],
+    "Caller requesting to verify billable CPT codes": [
+        "Caller requesting to verify billable CPT codes"
+    ],
+    "Caller requesting if authorization is required for study or procedure": [
+        "Caller checking to see if authorization is needed.",
+        "Caller checking to see if health plan requires authorization"
+    ]
+}

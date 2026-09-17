@@ -1,0 +1,102 @@
+Agent: thank you for calling telcomind my name is how may i help you 
+Customer: i i think i locked everything of my internet account here 
+Agent: 
+Customer: my PIN that little device 
+Agent: 
+Customer:says lock PIN on it and it has a number and i don't think i think i might have typed the wrong PIN code or something like that and i don't know how to fix it 
+Agent:ma'am i understand that the PIN code for the device was entered incorrectly because of which you are getting a locked PIN code 
+Customer: 
+Agent: please do not worry let me quickly have a look into it what exactly do you see on the device does it say 
+Customer: it just says lock PIN and there's two four six seven digit number 
+Agent:digit number right okay ma'am are you kindly in front of the computer 
+Customer: 
+Agent:you currently in front of a computer 
+Customer:i am 
+Agent: do you remember the security answers 
+Customer: i don't think i do because i tried doing that and i apparently i also messed that up 
+Agent:alright okay so what we would do here is you would go ahead and reset all the log in information alright 
+Customer: 
+Agent:can you please try to log in 
+Customer: 
+Agent:enter the last ten digits of your bank card 
+Customer: it's just loading the page 
+Agent:so after you enter the last ten digits please do not enter any security information alright 
+Customer: 
+Agent:me know once you're on the page 
+Customer: 
+Agent: 
+Customer:i'm there 
+Agent:now do you see the first link where it says do not have the secure device log on without it now 
+Customer: 
+Agent:click on that link and do not enter any information 
+Customer: 
+Agent:you on that page 
+Customer: 
+Agent:now please scroll down and click on the last link which says forgot your log on information after that on the next page you will have to click on continue 
+Customer: 
+Agent:it will take you to a page where you will have to reset all the log in information starting from the verification answer the password and the security question as well okay 
+Customer: 
+Agent: while you do so may i have may i address you i would have to first take you through a short verification here 
+Customer: 
+Agent:i have your verbal password please 
+Customer: the one that i use on the on here 
+Agent: i'm not looking for the password for internet banking i'm looking for the verbal password for telephone banking 
+Customer: i don't know that 
+Agent:not to worry may i have your mother's maiden name thank you very much and could you please help me with the expiration date on your bank card thank you very much for confirming all you can continue entering the information okay 
+Customer: 
+Agent:you have finished everything and when you click on continue at the bottom of the screen you'll get a confirmation number okay 
+Customer: 
+Agent: please help me with that confirmation number as i need to acknowledge that alright i'll request you to kindly follow the instructions after 
+Customer:just give me one second here 
+Agent:take your time let me know once you get the confirmation number alright 
+Customer: 
+Agent:you yes 
+Customer:hi okay the confirmation number is here 
+Agent: could you please help me with that number 
+Customer:sure 
+Agent:thank you very much i have acknowledged the confirmation number could you please click on the link which says return to log on 
+Customer: 
+Agent:so now i believe you're on the screen where it asks for the verification answer and a security code 
+Customer: 
+Agent:now if you scroll down there will be a place to enter this security code alright 
+Customer: there is is a what 
+Agent:is a place where you have to enter the security code there is a box 
+Customer: it asks for the verification question first and then the security code 
+Agent:so just below the security code do you see a link that says reset your secure device PIN 
+Customer:says forgot your security device PIN is that the one 
+Agent:correct forgot the device PIN 
+Customer: it's alright 
+Agent:you will have to enter the security answer one 
+Customer: 
+Agent:after you click on continue you will have to enter the security answer two 
+Customer: 
+Agent:so have you answered the security question and answers 
+Customer: 
+Agent:now is it asking to enter the locked PIN code 
+Customer: 
+Agent:now please switch on the security device and enter the locked PIN code 
+Customer: 
+Agent:once you do that and click on continue you will receive or you will get a PIN reset code okay after you get that code please let me know 
+Customer:it's here 
+Agent:now i believe the device is still switched on 
+Customer: 
+Agent:the green button it will allow you to enter this PIN reset code you will have to enter the PIN reset code from your computer onto the secure device 
+Customer:it's done 
+Agent: so is it asking to enter a new PIN 
+Customer: 
+Agent:please enter a PIN between four to eight digits this will be the new PIN for the security 
+Customer: 
+Agent:please press the yellow button after that and reconfirm the PIN telcomind 
+Customer: 
+Agent:the green button once 
+Customer: 
+Agent:you go you have the security code okay 
+Customer: 
+Agent: the PIN for the secure device has been changed alright 
+Customer: 
+Agent: you can click on return to log on 
+Customer:thank you so much for your help 
+Agent:welcome will there be anything else apart from this 
+Customer:i think that's it 
+Agent:well thank you for calling telcomind you have a wonderful weekend ahead 
+Customer:you you too Simultaneously: Simultaneously:

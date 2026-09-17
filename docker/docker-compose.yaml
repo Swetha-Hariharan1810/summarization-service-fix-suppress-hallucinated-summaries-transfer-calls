@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  summ-service:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    user: "999:1099"
+    # volumes:
+    #   - ../src:/home/ubuntu/codebase/src
+    #   - ../data:/home/ubuntu/codebase/data
+    environment:
+      - TZ=America/New_York
+      - DEBIAN_FRONTEND=noninteractive
+
+      - ENVIRONMENT=dev
+      - TESTING=0
+
+      - RMQ_BROKER_ID=b-56184769-5d62-48cf-99e2-fc173f3407fa
+      - RMQ_USERNAME=platform_producer
+      - RMQ_PASSWORD=platform_producer
+      - RMQ_AWS_REGION=us-west-1
+
+      - IP_QUEUE_NAME=summ_queue
+      - RESP_QUEUE_NAME=platform_resp_queue
+
+      - S3_UPLOAD_BUCKET=birch-dev-bucket
+      - S3_FOLDER_PATH=data/summ-service/summ
+
+      - SUMM_MODEL_VERSION=V11_complex_qa.general
+      - SUMM_MODEL_DOWNLOAD_PATH=s3://birch-dev-test-bucket/models/summarization/V11_complex_qa.general.zip
+      - SUMM_MODEL_NAME=finetune.qa.v11.16.3000.lr.2e-05.checkpoint_best
+
+    restart: always
+    tty: true
+    # keeps running container after exit 
+    # command: tail -f /dev/null
+    command: python3 src/rmq_listener.py
+    deploy:
+      mode: replicated
+      replicas: 1

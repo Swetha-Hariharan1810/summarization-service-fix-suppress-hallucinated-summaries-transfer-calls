@@ -1,0 +1,940 @@
+Transcripts,gpt3,V9,V8
+"Agent: thank you for calling telcomind premier mastercard my name is and how can i help you today 
+ Customer: hi there i don't use my card very much and so but i just started needing it more and i don't have a PIN number so when i'm buying stuff directly so i don't have a PIN to access for the chip 
+ Agent: i see no worries i can definitely help you get the PIN and can i just have your name before we proceed further i'll just go through a verification to ensure the security of your account can i please have your verbal password 
+ Customer: i have no idea 
+ Agent:problem do you remember providing us with your mother's maiden name thank you and what's the expiration date of your mastercard thank you miss planning to do any shopping today 
+ Customer: i already did but i'm not doing anymore no 
+ Agent: okay so what did you get for yourself 
+ Customer: we had to buy a new fridge from andre's 
+ Agent: i see that's nice so let me go ahead and get you get this PIN so that you'll have a more convenient shopping the next time can you just confirm with me your mailing address so i've already made a request please allow eight to ten business days for the PIN to arrive 
+ Customer: okay 
+ Agent:in case you wish to do a PIN change you can do that at any telcomind ATM 
+ Customer: okay so i won't have a PIN until that arrives in the mail 
+ Agent:right do you really need it right away because if yes i can make arrangement to have it rushed for you 
+ Customer: yeah well that would be ideal 
+ Agent: okay can you hold on for me for a minute i'll get back to you 
+ Customer: 
+ Agent:you for holding 
+ Customer: 
+ Agent:already made the request to have it sent to you it should be there in two to four business days 
+ Customer: okay that's awesome now is it possible to request a credit increase 
+ Agent: yes we can make a request for you and i just want to set your expectations that for a credit limit increase request there's a credit check that needs to be done are you okay with that 
+ Customer:sure 
+ Agent:and i also need to get some information from you as part of this request okay 
+ Customer: 
+ Agent:i just know the reason for the credit limit increase 
+ Customer: well my husband's just changing jobs so we've got a little bit of like a pay period that's a little bit off so we just need a little bit of extra back up money and our dish washer just died 
+ Agent: alright so i'll go ahead and help you get an increase right now your limit is at ten thousand how much limit would you like to have added 
+ Customer: even one or two thousand would be fine 
+ Agent:so from ten thousand to twelve thousand is that right 
+ Customer: yeah 
+ Agent:and i also need to know what's your current employment status alright and your current mailing address how long have you been on this address 
+ Customer: it will 
+ Agent:right now it's two years and eight months 
+ Customer: 
+ Agent: are you currently renting or okay and how much of your monthly or yearly income okay so this will be your household income 
+ Customer: household income is well like i said he's just changing jobs so yes yeah 
+ Agent: 
+ Customer: 
+ Agent: i'll just go ahead and review the disclosure as part of this request okay before i submit i would like to inform you that the credit check may be pulled and i would also like to remind you that this decision will be available within twenty four business hours would you like me to proceed in submitting your credit limit increase request 
+ Customer:please 
+ Agent: i've already made the request and kindly allow twenty four hours you can give us a call to check on the status of this request you can also log onto e-care dot telcomind dot ca to check on your credit limit if there's any changes so we've requested for 
+ Customer:that's awesome thank you very much 
+ Agent:welcome and would there be anything else that i could further help today 
+ Customer:that's great thanks very much 
+ Agent:welcome and thank you for calling telcomind premier mastercard we appreciate your business you have a wonderful day 
+ Customer:you 
+ Agent:welcome bye bye 
+ Customer:",The customer is requesting a credit limit increase and a new PIN for their credit card. The agent helps the customer by requesting a credit limit increase and making arrangements to have the PIN sent to the customer in a timely manner. The customer needs to wait for the PIN to arrive in the mail. They can also check on the status of the credit limit increase request by calling or logging onto e-care.,The customer is calling to request a credit limit increase. The agent helps the customer by getting them a PIN for their card and making a request for a credit limit increase. The customer needs to wait for the PIN to arrive in the mail.,"The customer is requesting a credit limit increase and a PIN number for their credit card. The agent helps the customer by making a request for a credit limit increase and by providing information about the credit check that needs to be done. The agent also provides the customer with a PIN for their card. The customer needs to wait for the PIN to arrive in the mail, and then submit a request for a credit limit increase."
+"Agent:to telcomind net my name is selwyn how may i help you @agent2:how are you 
+ Agent:doing well yourself @agent2:bad though i'm trying to make a payment instruction on telcomind net with a USD account but that we have 
+ Agent: @agent2:i was having some difficulty before i guess the first problem i had was i couldn't see the account on telcomind net even though you know it's there right 
+ Agent: @agent2:i realized that my system administrator had to add that like give me permission to see the account right 
+ Agent: @agent2:i got that done but then i realized they didn't give me privileges to make payment instruction so i couldn't see that account in the payment instructions right 
+ Agent: @agent2:though i could see it like in the account list so i again and they give me a privilege for that so now i could see that account 
+ Agent: @agent2:make create payment instruction and when i go into create payment instruction and fill out all the necessary fields and submit i get an ER error message saying signature requirement is not been defined in the account 
+ Agent: @agent2:the errors 
+ Agent:it's actually an administrator related error it's not something for your access per se but it's something that the account's missing so the account is missing a signature limit or a transaction limit @agent2: 
+ Agent:it would have to in that case it would have to be sent by an administrator @agent2:does that work exactly 
+ Agent:they'll go they'll have the ability to set-up a signature it's called a signature limit through their administrative functions it's just setting up a transaction on it for the account @agent2:so right now like there's nothing right no field right 
+ Agent:in this case there wouldn't have been any limits set-up for that account that's why the error message pops up @agent2:so my system administrator has to fill that out and i can make payments 
+ Agent: @agent2:okay it's very frustrating i've been trying to make this payment for like two weeks 
+ Agent:do you mind if i just grab the off the back of your device i just want to try and take a @agent2: 
+ Agent:at something in your first in your first @agent2:user ID 
+ Agent:your administrator was ever calling our team or do you know if he may have been Simultaneously: Agent2:have no idea 
+ Agent:something i mean let me see here it's to be entirely honest it's something that should have probably been addressed at the time when they initially called to have those changed if they ever did call Agent2: 
+ Agent:don't see them ever calling our team so i can't speak on behalf of the support that they may have gotten it somewhere else but yeah in this case it's just missing it is called a signature limit so if you i'm not sure if you'll be calling or just emailing your administrator or you can tell them that it's that needs to change for this particular account Agent2: 
+ Agent: Agent2:there anything else that might 
+ Agent:take a look here Agent2:possible another error 
+ Agent:this is typically the last one it would be more with the person who's approving the payment that might run into troubles after that from Agent2: 
+ Agent:know they have the right limits and whatnot but from what i can see for your access in the account it looks like that's the only thing that's missing Agent2:i have another question usually we don't make disregarding USD bucks usually we make canadian payments right 
+ Agent:okay Agent2:for that we make a template first 
+ Agent: Agent2:and then based of that template we create payment but for other currencies can i do the same process 
+ Agent:you can always make templates first Agent2: 
+ Agent:you make the template you can you can choose the currency if it will be there if it's going to be the same for each template but when you actually go in and create the payment you can always change the currency if you ever need to if you're ever going to be changing it for any reason Agent2:because before t didn't allow me to do that so i went straight to my instruction 
+ Agent:do you know what type of payment you may have been creating i know there are some restrictions based across different payment types but if you're all sending wires it's just a matter of selecting the currency in the drop down menu Agent2:me just get a hold of it right here okay so it's pretty much the same thing right 
+ Agent:so yeah there should be in that payment amount there's just a drop down for selecting the Agent2: sorry one second okay thanks a lot 
+ Agent:were you able to Agent2:it seems like yeah 
+ Agent:there are some restrictions as far as what currencies you can choose based on where the debit account is located but the drop down menu should still be there for you to select Agent2:i'm gonna do you think it be my work if i do it this way or would i 
+ Agent:do you mean like changing the template will you can change the template for now but it that same error message will show up whenever you try and create a payment from the account at least while there's no limit set-up Agent2:alright thank you 
+ Agent:so you do have like a template or someone that you're going to be paying you could set up a template for them now and that way you can just go and increase the payment later on once the been set-up so that at least you have something in the system Agent2: 
+ Agent: an Agent2: 
+ Agent: Agent2:you very much 
+ Agent:problem Agent2: 
+ Agent: Agent2:","The caller is having difficulty making a payment on the Telcomind website, and is seeking assistance. The agent helps the customer by providing information about the error message the customer is receiving. The agent also suggests that the customer contact their administrator to have the account set up with the proper limits. The customer needs to contact their administrator to set up a signature limit for their account.","The customer is trying to make a payment on Telcomind. Net, but is having difficulty because the account is missing a signature limit or transaction limit. The customer is also trying to figure out how to change the currency used for the payment. The agent helps the customer by providing instructions on how to create a payment instruction and how to change the currency used for the payment. The customer needs to call or email the administrator to tell them that something needs to change for this particular account.",The customer is having difficulty making a payment on their Telcomind account. They have been trying to make a payment for two weeks and have not been successful. They are frustrated and would like to speak to a customer service representative. The agent helps the customer by providing instructions on how to make a payment. The resolutions are to either set up a signature limit or to change the currency used for payment.
+"Agent:hi good evening thank you for calling telcomind premier my name is felix how can i help you today 
+ Customer:i just checking my account and transaction say five dollars thirty three and i just want to what that transactions five dollars 
+ Agent:you checking on the five dollars service fee that is posted on your account right 
+ Customer: 
+ Agent:no worries i'll be happy to check that of you okay allow me first to pull up the account and are you looking your account online 
+ Customer: 
+ Agent:thank you for utilizing the telcomind website and just to confirm you're 
+ Customer:correct 
+ Agent:and i can i call you 
+ Customer: 
+ Agent: 
+ Customer: 
+ Agent:thank you and thank you also for identifying yourself on the automated system using your telePIN okay so i assume this is showing on your savings account 
+ Customer:go on and see what's the date the day is september nine 
+ Agent:that's 
+ Customer:charge posting seven 
+ Agent:dollars you said okay okay so this is showing on your advance posting of five dollars this is regarding september eight let's check i see okay it's seems like there is a check that hit your account check number last september eight okay and when the time it hit your account the balance on your chequing account is 
+ Customer: 
+ Agent:and the check is dollars so this is yeah so the fund is not enough to cover the check 
+ Customer:the 
+ Agent:yeah so what we 
+ Customer:okay 
+ Agent: what your branch or your relationship manager did is that instead of returning the check of course once a check is returned the fee will be 
+ Customer: 
+ Agent:not only that you will be having a a negative impact with regards to your credit report 
+ Customer: 
+ Agent:so what he did is actually even though the account doesn't have enough fund he actually made the checks to go through and this caused your account to be overdrawn by that time but since yesterday there is indeed a payroll that came into your account 
+ Customer: 
+ Agent:so 
+ Customer: 
+ Agent: 
+ Customer: 
+ Agent:so from that service instead of you being charged the service charge was for that service is 
+ Customer: okay 
+ Agent:instead of you be posted funds and a negative impact on your credit report your relationship manager instead just let the check go through even though it doesn't have enough funds okay that's the reason for this service charge being posted on your account okay 
+ Customer:are you able to waive that fee 
+ Agent:for this one 
+ Customer: 
+ Agent: yeah no worries with with that i believe i can help you on this let me just go ahead and check and get details about this okay for me to able to process a reversal of course i will need also to file a complain for this let's say service charge being posted on your account without you having been informed or you don't have any knowledge on this okay because i'll be needing the complaint number for me to able to process or reversal of this five dollars fee 
+ Customer: 
+ Agent: of course in future if you have other let's say concern but you seems to be let's say you arse seems to be unsatisfied with regards to this or any fess that have posted on your account you can always visit our website telcomind can you also make your separate complain just login to telcomind dot ca slash complain or we can send you also a for complaint okay but for now i'll be happy to have this reverse and just give me twenty four hours this five dollars will be credited back to your account 
+ Customer: 
+ Agent: 
+ Customer:this time it's my understand so nice to me that's why you're reimburse the five dollars back to me so not kind of complain 
+ Agent: 
+ Customer: customer 
+ Agent:okay understand okay thank you for that so no worries twenty four hours i assure you this five dollars will be credited back to your account okay 
+ Customer:thanks be careful 
+ Agent:okay 
+ Customer: 
+ Agent: okay 
+ Customer:thank you 
+ Agent: 
+ Customer:you very much 
+ Agent:welcome and please continue to check your account online as well as a mobile phone anything else aside from this i can help you with 
+ Customer:think i'm good for today right now so thank you so much for your help 
+ Agent:thank you have a wonderful evening thank you for calling telcomind premier take care bye for now 
+ Customer:bye 
+ Agent:","The customer is calling to inquire about a charge of $5.33 that appears on their account. They would like to know what the charge is for, and whether or not it can be waived. The agent helps the customer by reversing the five dollar service fee that was posted on the customer's account. The agent also advises the customer to login to the telcomind website and file a complaint if they are unsatisfied with any fees that are posted in the future. The customer needs to wait 24 hours for the $5 fee to be credited back to their account.",The customer is checking on the five dollars service fee that is posted on their account. The agent helps the customer by refunding the five dollars that was charged to their account. The agent also provides the customer with the contact information for the Telcomind website so that they can file a complaint. The customer needs to file a complaint with Telcomind.,The customer is checking on a five dollar service fee that was posted on their account. The agent helps the customer by providing information about the service charge and by providing the customer with the option to file a complaint. The agent also assures the customer that the five dollars will be credited back to their account within 24 hours. The customer needs to file a complaint with Telcomind.
+" Agent:this is wanda calling from telcomind direct channel how are you today 
+ Customer:fine wanda how are you 
+ Agent:good thank you for asking before i it i will like to let you know that for monitoring purpose and as a record of information is changed this call on home maybe recorded is that fine to you 
+ Agent:good and also i need to verify that you are the account holder please tell me your coming birthday age telcomind canadian funds do you hold any other foreign currency account with us 
+ Customer:have a 
+ Agent:actually that is the test return 
+ Agent:and i see the 
+ Customer:it's just it's a foreign 
+ Agent:you have that copy right 
+ Customer:the appraisal 
+ Customer:i have it it's about eight years old now but i from when i bought the property telcomind did an appraisal i have it here i can send it to you 
+ Agent:do you mind to send that to me because if the no i could understand that the use it a where you'd to assess that so that maybe a difference between the appraisal so 
+ Customer: 
+ Agent:so do you mind to provide me with that copy 
+ Customer:just give me one second here i'm just i think just give me one moment 
+ Agent:because it's the way you show that it's difficult for me to you know 
+ Customer:no i understand completely yeah no problem i i definitely have the appraisals i'm just trying to find it one second make sure value of the appraisal okay i have it here wanda i've just got i've got so many old files here fine i can send it in the next fifteen minutes if that's 
+ Agent:you send it to me and i have the second second thought if the is the on the asked me about the where you right now because we don't have any current where to showed the okay if you don't mind we can order a drive-by appraisal that will be cost around couple hundreds only but if that drive-by appraisal is close to the value of the it's actually cost and then we can combine three into one in that way you can save more interest but you'll need 
+ Agent:may need to spend couple hundreds to do a drive-by appraisal 
+ Customer:well let me send you the old appraisal and then if you still need the drive-by after that so be it but prefer to avoid spending money if i can but let me 
+ Agent:course 
+ Customer:me send you this let me send you what i have and tell me if it works if it doesn't work then we'll to the drive-by but if it does work then that's great 
+ Agent:good i've got you martin that's what i want do you have any other question right now ","The customer is calling to inquire an old appraisal for the house. The agent helps the customer by offering to order a drive-by appraisal to assess the value of the property. If the previous appraisal is close to the value of the property, then the drive-by appraisal will not be required. The customer needs to send the agent the old appraisal.",The customer is trying to find out if there is a difference in the value of an appraisal from eight years ago. The agent helps the customer by ordering a drive-by appraisal and providing the customer with the old appraisal. The customer needs to send the old appraisal to the agent.,The customer is trying to find out if there is a difference between the current appraisal and the old appraisal. The agent helps the customer by ordering a drive-by appraisal and providing the customer with the old appraisal. The customer needs to send the old appraisal to the agent.
+"Agent: thank you for calling telcomind mastercard this is on the line and i just want to thank you for putting in your card information in our automated system please kindly continue doing that every time you contact us how can i help you today 
+ Customer:actually i just this is a call back i got a email from your company some alert email and and so i called back this morning and i spoke with a lady she some charges tried to withdraw from my account 
+ Agent: 
+ Customer: which i didn't have the and then i called say they did not do don't have anything charged to me on my so asked me to call paypal i just finished talking with paypal and they say that somebody did use my account to make and they saying that my been hacked yesterday know what's happening 
+ Agent:so basically it was a transaction to starbucks is that correct to starbucks 
+ Customer: 
+ Agent:i can go ahead and check that for you so meaning to say mr that starbucks transaction is it something that you do is that correct 
+ Customer:sorry i didn't get your last question 
+ Agent:i'm sorry you are confirming that the starbucks transaction was it something that you were trying to do is that correct 
+ Customer:yes and the lady that told me there was twelve transaction like that together 
+ Agent:yeah 
+ Customer:hundred dollar each yeah 
+ Agent:so those are attempts basically i would love to check that for you and before i proceed let me pull up your account real quick alright your verbal password alright i appreciate that thank you so much and yes as upon reading your documentation one of my colleagues left on your account there was like there were like eleven transaction of attempts of one hundred dollars each however those failed and none of those transactions proceeded actually so we're good now since that someone might have access to your mastercard mr cancel your card and then replace it by a new card number 
+ Customer: 
+ Agent:right yeah and i understand that the hassles comes in most especially when you are given a new card number coz you would have to update all of them and i totally understand however for your security someone might have access to your mastercard they have your mastercard details and we cannot risk that fact 
+ Customer:that's all the transactions 
+ Agent:from i'm sorry 
+ Customer:company yeah 
+ Agent: 
+ Customer:also noticed yeah i also noticed that when i log into my paypal account hacked my thing hacked in my i mean the what you call that not a but my paypal statement i saw that it's already one hundred dollar transactions have been canceled on my paypal statement 
+ Agent:i see so it looks like someone may have access to your paypal if not your mastercard details then now 
+ Customer:so i have already reset everything on my paypal 
+ Agent: now mr so you have your card canceled because you know someone might have access to one of those accesses like your paypal or your mastercard details but you wouldn't want to have your mastercard canceled is that correct 
+ Customer: is the only one i have a problem with alright 
+ Agent:correct yeah that's what our monitoring right now the starbucks one 
+ Customer:can you tell me how many transactions is altogether they make 
+ Agent:sure yeah according to the transactions details there were like eleven transactions of one hundred dollars to starbucks now we can go ahead and monitor your spendings as well with that starbucks now i would also highly recommend you monitoring your transactions through ecare dot telcomind dot ca so at least you can have a grasp what's going on with your mastercard at the same time 
+ Customer:did you guy told me that told me that i should transaction on my credit card statement on those eleven times i did anything i saw this morning 
+ Agent:i see so you did all of those and we appreciate them and i'm glad that we were able to monitor it as well on our end now okay mr i won't cancel your mastercard given the fact that you don't have that you are requesting it not to be canceled then again if you noticed that transactions keeps on being attempted on your mastercard then you know please kindly call us back see if we can do something about it 
+ Customer: those eleven times and those eleven times so how do i go about 
+ Agent:those are declined actually so they didn't proceed 
+ Customer:okay so the end that actually go to starbucks in the from my credit card account zero is that right 
+ Agent:zero that's correct 
+ Customer:so okay so that is correct then because my father account was not updated and i didn't even get the hundred dollars that i offered so i guess everything so then so okay okay so since i'm with you on the phone now because i will be traveling to to this two days one day so i will be making at some of the wineries as well 
+ Agent:okay so when are you gonna be traveling today departure when is your return is it going to be tomorrow 
+ Customer:ten days yeah it's day trip i will be going to kolowna for wineries today so you will receive you will see me 
+ Agent:kolowna and alright sure and i appreciate you mr you're gonna be traveling today so at least we can still monitor transactions i just want to there is something that you were trying to do right however the amount okay thank you for 
+ Customer:me explain that to you again what happened is i have a set up in my account 
+ Agent:see 
+ Customer:i went into the when it ten dollars automatically reload my of my most of my time i spend in where i live but yesterday i did make a in okay that is going to happen 
+ Agent:see 
+ Customer:somebody might have hacked into your in that location and they were trying to reload it through paypal and so what they done is they have actually reset all the password in paypal and nothing is to them on the paypal side the only thing is the starbucks 
+ Agent:see so they only illegit is the starbucks then but the paypal's the one someone's trying to access on it i see so there were for paypal i see that were like eight transactions here for starbucks four transactions that's a total of twelve transactions of a hundred dollars attempt 
+ Customer:okay 
+ Agent:that was i see 
+ Customer:isn't it 
+ Agent:yes none of them go through 
+ Customer:okay 
+ Agent: i'm glad about that as well as your travel plans so we can monitor it so i just want to remind you to that our security team might actually send you an email alert about the verification of a transaction but don't be alerted it's just normal we're trying to of course protect you and to check transactions 
+ Customer:i understand that 
+ Agent:okay 
+ Customer:i will have access all the time 
+ Agent:beautiful alright so mr mastercard profile i'm gonna submit this request to them right now anything else that i might be able to assist 
+ Customer:nothing fine thank you very much 
+ Agent:is my pleasure mr and thank you as well for calling telcomind premier mastercard we appreciate business and have a safe trip okay take care 
+ Customer:you okay take care bye for now 
+ Agent:bye 
+ Customer:","The customer is concerned about unauthorized charges on their account, and is also planning to travel soon. The agent assures the customer that the charges were not successful, and provides information about how to monitor their account in the future. The agent recommends that the customer monitor their transactions closely. The customer needs to monitor their account for any suspicious activity and report any unauthorized charges to their credit card company.","The customer is concerned that their account may have been hacked, and that there have been unauthorized transactions made on their account. They are also concerned that someone may have access to their PayPal account. The agent helps the customer by checking the transactions and confirming that none of the transactions were fraudulent. The agent also recommends that the customer monitor their transactions through Ecare. The customer needs to monitor their credit card account for any unauthorized transactions.","The customer is concerned that their account may have been hacked, and that someone has attempted to make unauthorized charges on their account. They are also concerned that someone may have access to their PayPal or Mastercard information. The agent helps the customer by monitoring their account and providing information about the transactions that have been made. The agent also recommends that the customer monitor their transactions through Ecare. The customer needs to monitor their credit card account for any unauthorized transactions."
+"Agent: thank you for calling telcomind my name is shaun how may i help you 
+Customer:shaun yeah i just out on the internet because when i try to move funds on there i find out one of my accounts is being inactive so can you help me 
+Agent:and am i speaking to how are we doing today 
+Customer: great thank you 
+Agent: wonderful that's good news and thank you very much for also coming in telePIN verified that gives me an access to discuss your account over the phone straight away and it cuts out your verification whenever you give us a call so i appreciated that okay 
+Customer: 
+Agent:may i know which account are we talking about 
+Customer:think it's 
+Agent:and do you have a security device with you right now or internet banking 
+Customer: yes i do 
+Agent:see if you go down to the bottom of the page you get an option if you go to telcomind dot ca or if you scroll down you get an option called reactivate your account reactivate dormant account do you find that 
+Customer: i have to go to my PC do i need to do it now or can you do it over the phone 
+Agent: well at the moment if i take the request it's going to take twenty four hours but if you have the security device it could be done right away 
+Customer: okay then 
+Agent:way 
+Customer:hold on a second if you don't mind 
+Agent:wait for you not to worry 
+Customer:thank you 
+Agent:you logged into your 
+Customer: 
+Agent:i'll wait for you 
+Customer: 
+Agent:right log into your 
+Customer: okay how long does the battery 
+Agent:i cannot exactly predict you but average would be three years it depends it could be anywhere between two to three years or maybe more it depends on the user once you're logged in please let me know i'll tell you how to go about with it okay 
+Customer: i'm in now 
+Agent:okay so go down to the bottom of the page and the background do you see the it says account maintenance just below ways to bank scroll down on the main page where you're seeing all your account numbers scroll down just the account maintenance 
+Customer:and payments 
+Agent:maintenance there's an option called see just below ways to bank below that there is account maintenance and below that is to reactivate your account click on that please 
+Customer: 
+Agent:then on the center of the page click on continue and here this way it'll ask you to wait for two or three business working days to process your request just to let you know it's not immediate it's two or three business days 
+Customer:where do i go to continue 
+Agent:on 
+Customer: 
+Agent:able to see that it's just on the center of the page 
+Customer:it's coming up very slow 
+Agent: i see 
+Customer:and then it ask me to enter the branch and account number 
+Agent:so which account is let me just check from my end 
+Customer:it's 
+Agent:the account number is and no dash no space 
+Customer:it is account number is one o one got it 
+Agent: 
+Customer: 
+Agent:can you please generate the code what it's asking you on the website 
+Customer:says here confirmation number that number and then 
+Agent:right and within two or three business days the account will turn active 
+Customer: okay 
+Agent: has been submitted yes two or three business days i would say by friday it should be turning active apart from this you can monitor your accounts through the online banking and through the mobile banking apps and through the automated line do you have any other questions for me i'll be glad to help 
+Customer: it's not a credit card right it's a debit card 
+Agent:one are we talking about 
+Customer: i got the telcomind advance card 
+Agent:a debit card does it end with that's a bank card that's your ATM card 
+Customer:just for ATM right 
+Agent:right 
+Customer:cool thank you 
+Agent:you have any other questions for me thank you for calling telcomind buh bye 
+Customer:",The customer is trying to reactivate a dormant account. The agent helps the customer by taking the request to reactivate the account and by providing information on how long the process will take. The resolutions are that the account will be reactivated within two to three business days. The customer needs to wait for two or three business days for the account to turn active.,The customer is having trouble with their account and wants to know how to reactivate it. The agent helps the customer by providing instructions on how to reactivate their account and how to monitor their account through the online banking and mobile banking apps. The customer needs to log in to their account and wait for the request to be processed.,"The customer is trying to reactivate a dormant account and is asking for help. The agent helps the customer by providing instructions on how to reactivate their account. The resolutions are that the customer's account will be reactivated within two or three business days, and that they can monitor their account through the online banking and mobile banking apps."
+"Agent:thank you for calling telcomind you're speaking to melvin how may i help you today 
+ Customer: i don't know if you can actually i need a i need cash and i would like to know if you have a special procedure for that or i just can go to the branch and ask for the money 
+ Agent:i'll be more than happy to help you i'll definitely check the details you said that you're an existing customer with telcomind 
+ Customer: 
+ Agent:wonderful may i have your name please 
+ Customer:the problem with that i'm not with my card i don't know my the number of my account it can you check with my name 
+ Agent:may i have your name please 
+ Customer:my name is 
+ Agent:you very much for that information miss customer which currency that you're looking for 
+ Customer:thousand 
+ Agent:thousand canadian dollars or is it 
+ Customer: 
+ Agent: canadian dollars okay and can you confirm to me from which branch would you like to receive or would you like to pick up the 
+ Customer: i'm just calling you because i don't know if you have a special procedure i have just to go to the branch and ask for the money and i 
+ Agent:no 
+ Customer: 
+ Agent: for the cash in fact ten thousand dollars to withdraw ten thousand dollars it is quite a huge amount 
+ Customer: 
+ Agent:the maximum amount that you can withdraw or the maximum amount that the branch may provide you is up to five thousand canadian dollars equally it's not more than that so 
+ Customer:thousand per day or 
+ Agent:daily basis per fetch 
+ Customer:day okay 
+ Agent:so you have to place an order or you may have to we may have to find out from which branch that you're looking for to pick up the cash whether they have they have sufficient funds or not and then you can visit the branch and pick up the funds it is always better that you book the details before 
+ Customer: how many day before 
+ Agent: you can just let me know at which branch you would like to pick up the funds i can check with the branch and then help you out right away 
+ Customer:okay so and do you know my branch 
+ Agent:looking for mill park road branch 
+ Customer:it's my branch where i open the account 
+ Agent: that's on number two hundred mill park road you need one hundred toronto 
+ Customer: 
+ Agent:i can definitely check that for you that shouldn't be a problem can i just place you on hold for two to three minutes here 
+ Customer: 
+ Agent:i place you on hold for two to three minutes 
+ Customer:sorry i didn't understand what you're asking me 
+ Agent:i place you hold so that i can check with the branch and then help you 
+ Customer:okay sorry about this sometimes i have difficulty to understand sorry you can put me on hold 
+ Agent:you very much please be online i'll get back to you 
+ Customer: 
+ Agent:you very much for being on hold i appreciate your patience quite busy i'm unable to get anyone at the branch would you like to leave a message so that they should be able to contact you 
+ Customer: i really don't know because i'm i'm not what time they close the the branch 
+ Agent:this particular branch works from nine thirty am to four thirty pm eastern time from monday to friday and they're closed on saturdays 
+ Customer:four thirty okay 
+ Agent: 
+ Customer:i if i will be able to go to the branch i have take this using my husband also 
+ Agent:see 
+ Customer: so and maybe for me because we don't need all the money today 
+ Agent: 
+ Customer:maybe i can have the five thousand okay 
+ Agent: 
+ Customer:that's okay 
+ Agent:that shouldn't be a problem five thousand dollars should be it shouldn't be a problem you can withdraw five thousand dollars today and five thousand dollars tomorrow 
+ Customer:and the other day maybe i can go through this 
+ Agent: 
+ Customer:so i should check with my husband if i decide something different i call you 
+ Agent: 
+ Customer: okay 
+ Agent:worries at all you can give us a call back anytime 
+ Customer: okay 
+ Agent:is there anything else i may help you with today 
+ Customer:just that thank you 
+ Agent:you very much for calling telcomind and you have a pleasant day ahead bye bye 
+ Customer:you 
+ Agent:","The customer is trying to find out if there is a special procedure for withdrawing a large amount of cash, and if so, what it is. The agent helps the customer by checking with the branch to see if they have the funds available to withdraw, and by providing the customer with the contact information for the branch. That branch was not reachable. The customer will withdraw five thousand dollars each today and tomorrow. ","The customer is trying to find out if there is a special procedure for withdrawing money from their account, and if so, how to go about doing so. The agent helps the customer by checking the details of their account and confirming which branch they would like to pick up the funds from. The resolutions are that the customer is able to withdraw the money they need from their account, and that they are satisfied with the service.",The customer is calling to ask if there is a special procedure for withdrawing cash from their account. The agent helps the customer by checking with the branch to see if there are sufficient funds to cover the customer's request. The agent also provides the customer with instructions on how to withdraw the funds. The customer needs to check with their husband to see if they can go to the branch and pick up the funds.
+"Agent: thank you for calling telcomind my name's archie how can i help you 
+ Customer: hi archie this is calling from the telephone banking department i have a customer calling in and she has some questions regarding her market insurance i have the account number if that's okay it's follow on the other line but i haven't verified the customer 
+ Agent:can i have the security code 
+ Customer:me one moment i'll 
+ Agent:you 
+ Agent: take the call have a good day thank you 
+ Customer:too thank you 
+ Agent: yes my name's archie and i am a representative here at the office in so my colleague told me you're calling in today to inquire about your mortgage and perhaps the insurance you have attached to the mortgage 
+ Customer:we want to take steps to cancel the insurance and i just want to know what the steps we need to do to cancel the insurance policy 
+ Agent: for sure so in order cancel your insurance we do need the applicant to sign on a form okay so i can prepare the form for you and have it signed and send it back to me and then i can pass it to the internal department for them to process the cancelation then 
+ Customer: perfect okay 
+ Agent: okay and i must say the insurance is actually single name based on 
+ Customer: yes search and them so if you wanted to send it to me by email or is it possible by email it doesn't matter to sign it then 
+ Agent:alright so i'll prepare the form for him and i'll send it to him sign it and email it back to me then 
+ Customer:can we fax it back we're not quite sure how to 
+ Agent: 
+ Customer: okay good fax number we're not too good on this scan thing yet 
+ Agent: okay no worries then fax it back so in my email signature there should be a fax number 
+ Customer: 
+ Agent:so and so there is a cancelation date on the insurance document so should i put it as tomorrow then would you be able to give me back the document by tomorrow 
+ Customer: absolutely we can fax it back right away yeah 
+ Agent: great so i'll set as tomorrow then so september ninth then 
+ Customer: 
+ Agent:alright is there anything no problem thank you for calling telcomind have a great day 
+ Customer:yeah you too 
+ Agent:bye 
+ Customer: 
+ Agent:","The customer is inquiring about cancelling their mortgage insurance, and the agent is providing instructions on how to do so. The agent helps the customer by preparing a form for them to sign and fax back, in order to cancel their insurance policy. The customer needs to sign a form and fax it back to the company.",The customer is calling to cancel their insurance policy. The agent helps the customer by cancelling the insurance policy and sending the form back to the customer. The customer needs to sign a form and fax it back to the agent.,"The customer is trying to cancel their insurance policy. The agent helps the customer by preparing a form for the customer to sign and send back, and by providing a cancelation date for the insurance policy. The customer needs to sign a form and send it back to the agent."
+"Agent: thank you for calling telcomind my name is how may i help you 
+ Customer: i i think i locked everything of my internet account here 
+ Agent: 
+ Customer: my PIN that little device 
+ Agent: 
+ Customer:says lock PIN on it and it has a number and i don't think i think i might have typed the wrong PIN code or something like that and i don't know how to fix it 
+ Agent:ma'am i understand that the PIN code for the device was entered incorrectly because of which you are getting a locked PIN code 
+ Customer: 
+ Agent: please do not worry let me quickly have a look into it what exactly do you see on the device does it say 
+ Customer: it just says lock PIN and there's two four six seven digit number 
+ Agent:digit number right okay ma'am are you kindly in front of the computer 
+ Customer: 
+ Agent:you currently in front of a computer 
+ Customer:i am 
+ Agent: do you remember the security answers 
+ Customer: i don't think i do because i tried doing that and i apparently i also messed that up 
+ Agent:alright okay so what we would do here is you would go ahead and reset all the log in information alright 
+ Customer: 
+ Agent:can you please try to log in 
+ Customer: 
+ Agent:enter the last ten digits of your bank card 
+ Customer: it's just loading the page 
+ Agent:so after you enter the last ten digits please do not enter any security information alright 
+ Customer: 
+ Agent:me know once you're on the page 
+ Customer: 
+ Agent: 
+ Customer:i'm there 
+ Agent:now do you see the first link where it says do not have the secure device log on without it now 
+ Customer: 
+ Agent:click on that link and do not enter any information 
+ Customer: 
+ Agent:you on that page 
+ Customer: 
+ Agent:now please scroll down and click on the last link which says forgot your log on information after that on the next page you will have to click on continue 
+ Customer: 
+ Agent:it will take you to a page where you will have to reset all the log in information starting from the verification answer the password and the security question as well okay 
+ Customer: 
+ Agent: while you do so may i have may i address you i would have to first take you through a short verification here 
+ Customer: 
+ Agent:i have your verbal password please 
+ Customer: the one that i use on the on here 
+ Agent: i'm not looking for the password for internet banking i'm looking for the verbal password for telephone banking 
+ Customer: i don't know that 
+ Agent:not to worry may i have your mother's maiden name thank you very much and could you please help me with the expiration date on your bank card thank you very much for confirming all you can continue entering the information okay 
+ Customer: 
+ Agent:you have finished everything and when you click on continue at the bottom of the screen you'll get a confirmation number okay 
+ Customer: 
+ Agent: please help me with that confirmation number as i need to acknowledge that alright i'll request you to kindly follow the instructions after 
+ Customer:just give me one second here 
+ Agent:take your time let me know once you get the confirmation number alright 
+ Customer: 
+ Agent:you yes 
+ Customer:hi okay the confirmation number is here 
+ Agent: could you please help me with that number 
+ Customer:sure 
+ Agent:thank you very much i have acknowledged the confirmation number could you please click on the link which says return to log on 
+ Customer: 
+ Agent:so now i believe you're on the screen where it asks for the verification answer and a security code 
+ Customer: 
+ Agent:now if you scroll down there will be a place to enter this security code alright 
+ Customer: there is is a what 
+ Agent:is a place where you have to enter the security code there is a box 
+ Customer: it asks for the verification question first and then the security code 
+ Agent:so just below the security code do you see a link that says reset your secure device PIN 
+ Customer:says forgot your security device PIN is that the one 
+ Agent:correct forgot the device PIN 
+ Customer: it's alright 
+ Agent:you will have to enter the security answer one 
+ Customer: 
+ Agent:after you click on continue you will have to enter the security answer two 
+ Customer: 
+ Agent:so have you answered the security question and answers 
+ Customer: 
+ Agent:now is it asking to enter the locked PIN code 
+ Customer: 
+ Agent:now please switch on the security device and enter the locked PIN code 
+ Customer: 
+ Agent:once you do that and click on continue you will receive or you will get a PIN reset code okay after you get that code please let me know 
+ Customer:it's here 
+ Agent:now i believe the device is still switched on 
+ Customer: 
+ Agent:the green button it will allow you to enter this PIN reset code you will have to enter the PIN reset code from your computer onto the secure device 
+ Customer:it's done 
+ Agent: so is it asking to enter a new PIN 
+ Customer: 
+ Agent:please enter a PIN between four to eight digits this will be the new PIN for the security 
+ Customer: 
+ Agent:please press the yellow button after that and reconfirm the PIN telcomind 
+ Customer: 
+ Agent:the green button once 
+ Customer: 
+ Agent:you go you have the security code okay 
+ Customer: 
+ Agent: the PIN for the secure device has been changed alright 
+ Customer: 
+ Agent: you can click on return to log on 
+ Customer:thank you so much for your help 
+ Agent:welcome will there be anything else apart from this 
+ Customer:i think that's it 
+ Agent:well thank you for calling telcomind you have a wonderful weekend ahead 
+ Customer:you you too Simultaneously: Simultaneously:","The customer is having difficulty logging into their internet account, and believes they may have entered the wrong PIN code. The agent helps the customer reset their login information and PIN code. The agent helps the customer by resetting all the login information and providing a new PIN for the security device. The customer needs to reset their log in information, including their password and security question. They will also need to enter a new PIN for their security device.",The customer is having trouble with their internet account and is asking for help. The agent helps the customer by resetting their log-in information and providing instructions on how to enter the security code. The customer needs to reset their log-in information and enter their locked PIN code.,The customer's internet account was locked because the PIN code was entered incorrectly. The customer is trying to reset their account and get a new PIN. The agent helps the customer by resetting their log-in information and providing instructions on how to enter a new PIN code. The customer needs to enter a new PIN for their secure device.
+"Agent:hello thanks for calling telcomind my name is tom may have your name please 
+ Customer:my names 
+ Agent: account here just give a moment 
+ Agent: how are you doing today 
+ Customer:sorry 
+ Agent:how are you doing today 
+ Customer:i'm fine 
+ Customer:trying to get into online banking but i couldn't get into it so 
+ Agent:i see i'm sorry to hear that well i understand sometimes online transactions kind of gets complicated but i'm here to help you alright 
+ Agent:could you please give me your access number the last ten 
+ Customer:digits 
+ Agent:your yeah the last ten of your bank card alright thank you and this the one that you're using to access your account online right 
+ Agent:so it's 
+ Customer:yeah 
+ Agent:thank you is this the first time that you're trying to access this account online using this access number 
+ Customer:i haven't been online for long time so that's why i now 
+ Agent:what the error message that you're getting whenever you're trying to 
+ Agent:you getting an error message 
+ Customer: tried to like first time i number it's it's to wrong numbers or 
+ Agent: alright just give me one moment here okay 
+ Agent:i'm sorry for the wait i'm still actually just trying to pull up your account here on my end 
+ Agent:so finally got your account pulled up here let me just check some more details on the account alright mr alright could you please confirm your full name including your middle name if you have one alright could you please also confirm your verbal password on the account 
+ Customer:sorry 
+ Agent:verbal password on the account could you please confirm 
+ Customer: i i'm sorry i can't i don't i 
+ Agent:verbal password or phone in password 
+ Agent: could you please confirm your date of birth i'm sorry you're really breaking out alright thank you and also could you please give me the address on file your home address on file alright do you have your bank card with you do you have it handy 
+ Agent: could you please double check the expiry date of the card 
+ Customer: hello 
+ Agent: just give me one moment sir okay here alright one second here okay i'm trying to logon online to see if there's going to be an error message here that i'll be getting okay one second 
+ Agent:i'm still here sorry i'm still here okay just please bear with me don't worry i won't hang up on you 
+ Agent:i've was just having a hard time pulling up this account and i need to ask you some verification questions alright 
+ Agent:sorry for the wait well let me just put you on hold for a minute or two here okay i'll just put you on hold i need to ask you one more verification question here i need to get some details from your account 
+ Agent:a debit card you hello 
+ Agent:so sorry for the long unfortunately even we cannot access your account here on my end i've tried to access it or tried to check if i can reset your online access but i can't access your account as well and also there's an information here that i need to access on your file but can't access it as well so it's just that you just go to the branch you can go to any nearest branch telcomind branch in the area just bring two valid ID's with you there's an information here that needs to be updated 
+ Customer: so i have to go to the branch and fetch that off them 
+ Agent:please please bring two valid ID's with you alright any nearest branch will do 
+ Customer:okay then 
+ Agent:i do apologize for the inconvenience 
+ Customer:that's okay bye bye 
+ Agent:you're very much welcome thanks for calling 
+ Customer:you 
+ Agent:your business bye ","The customer was trying to access their online banking account, but was having difficulty. The agent was trying to help them, but was unable to access the account. The customer was advised to go to their nearest telcomind branch to update their information. The agent tries to help the customer by logging into the account and checking for any error messages. Given the agent is unable to access the account, they recommend that the customer go to a Telcomind branch to update their information. The customer needs to go to the nearest telcomind branch with two valid ID's.","The customer is trying to access their account online, but is having difficulty doing so. They are also getting error messages when trying to log in. The agent helps the customer by trying to access their account and reset their online access. The agent also provides the customer with instructions on how to go to a Telcomind branch to update their information. The customer needs to go to a Telcomind branch and bring two valid ID's with them.","The customer is trying to access their account online, but is having difficulty. They are also having difficulty resetting their online access. The agent helps the customer by trying to access their account and providing them with information on how to reset their online access. The agent also provides the customer with the option to go to a Telcomind branch to update their information. The customer needs to go to a Telcomind branch with two valid ID's to update an information on their account."
+"Agent: like my name is Ethan can I take the phone number or the account number in question please
+ Customer: yes it's 251-209-0143
+ Agent: thank you and just give me a moment while I pull up your account information today
+ Customer: mhm
+ Agent: write the number that you just gave it to me is 351-209-0143 is that correct
+ Customer: no 251
+ Agent: two okay
+ Customer: 251-209-0143
+ Agent: thank you
+ Agent: right now can I help you with your name please
+ Customer: Angela Sal
+ Agent: thank you very much for the security reasons of your account could you please confirm the 4-Digit PIN code
+ Customer: 04/27
+ Agent: great thank you
+ Agent: and I see that the address on the account is 7520 Sharon court that still down
+ Customer: right
+ Agent: Al 36582 is that correct
+ Customer: correct
+ Agent: right now I'm speaking with the account holder today is that correct miserable
+ Customer: yes
+ Agent: thank you for all the details from the account how can I help you today
+ Agent: okay
+ Customer: okay I have I have data on my phone but when I go to use the internet it says connect to Wi-Fi why would I have to connect to the Wi-Fi
+ Agent: all right so
+ Agent: the phone is asking you to get connected to Wi-Fi is that correct
+ Customer: right right
+ Agent: okay so what are you trying to do are you trying to set up your phone or are you trying to use basic internet services
+ Customer: just used internet
+ Agent: okay right now
+ Agent: are you do you have okay you called
+ Customer: right
+ Agent: from the same number you said right is the internet connections which done on your phone is the data on
+ Customer: hold on 1 second
+ Agent: is the mobile data turned on
+ Customer: I can hear you just hold on 1 second
+ Customer: let me connect
+ Agent: yes
+ Customer: yes but the Wi-Fi is on also
+ Agent: that's why I disconnect Wi-Fi
+ Customer: all right
+ Agent: and when you're on the call with me will not be able to have an access to your internet services right
+ Agent: so what I would suggest you to do is turn off your Wi-Fi okay and your data mobile data should be switched on all right and then try and see if you're able to use internet connection if you're not able to use I'll give you a few steps so if you have a pen and paper ready
+ Agent: I would request you to please make a note of these steps
+ Customer: all right
+ Customer: go ahead
+ Agent: right you need to go to settings
+ Agent: then you'll need to go to system
+ Agent: an advance
+ Agent: then the next option you will see is reset options
+ Agent: right reset options the first thing that you
+ Customer: right
+ Agent: see is Wi-Fi mobile a Bluetooth you need to select that
+ Agent: once you select that the first option that you will get first a second option that you will get would be perform network reset on network reset
+ Agent: okay you select that the once you select once you click on that the network on your phone will go through a reset all right so once the reset is done them switch off your phone so it should turn back again and then try to use your internet services that should resolve your issue okay
+ Customer: okay all right thank you
+ Agent: and even if it's sold if it's not working after that after performing the network reset then I would request call us back from an alternate number maybe your landline number or maybe some other phone number that you can call us right so that we can follow more troubleshooting steps on your account okay
+ Customer: okay thank you
+ Agent: you're welcome and Michelle before I let you go today I would also like to inform you that as of now you are eligible to get a tablet at $10.01 all right so if you're looking forward to get a tablet what you can do is you can reach me on my truconnect app right once you register on my truck Connect app you will be able to purchase a tablet only at $10.01 as a one time payment okay wage
+ Customer: okay all right thank you
+ Agent: brilliant you're welcome so is there anything else that you would want to know me soul
+ Customer: no that's it thanks
+ Agent: do you have a wonderful day do you take care of yourself and thank you for calling to connect today
+ Agent: yes I would like to please disconnect the call ma'am
+ Customer: all right thank you
+ Agent: thank you",,"The customer is having trouble with their phone's data service, and the agent is trying to help them troubleshoot the issue. The agent helps the customer by providing instructions on how to reset the phone and troubleshoot the issue. The agent also offers to help the customer purchase a tablet for $10.01. The customer needs to go to the settings on their phone and select the ""network reset"" option. Once the reset is done, they need to turn off their phone so that it will turn back on. If the issue persists, they should call back from an alternate phone number.","The customer is having difficulty connecting to the internet, and the agent is trying to help them troubleshoot the issue. The agent helps the customer by providing instructions on how to reset their phone and troubleshoot their internet connection. The agent also offers to help the customer purchase a tablet for $10.01 as a one-time payment. The customer needs to go to the settings and select the ""network reset"" option. Once the reset is done, the phone should turn back on and try to use the internet services. If the issue is not resolved, the customer should call back from an alternate number."
+"Agent: thank you for calling Andrew connect this is Brian here could you please help me with your phone number or the account number with truconnect
+ Customer: it's 434-228-5246.
+ Agent: all right and could you please confirm your full name
+ Customer: is chicken Craighead
+ Agent: my name is Craig had the four digit PIN number that you set up on the account
+ Customer: 183
+ Agent: all right and the other address is 104 North Hill Court Apartment D Danville Virginia
+ Customer: yes sir
+ Agent: okay and you're the account holder right
+ Customer: yes
+ Agent: all right thank you so much for the information ma'am how can I help you today
+ Customer: how much data do I have on my phone left
+ Agent: so actually you don't have data left on the phone at the moment
+ Agent: every month you're getting 8 GB
+ Agent: of internet data and that's already been used
+ Customer: okay so how much is it to add someone there
+ Customer: $10
+ Agent: per GB is $10 1 GB for 10 yeah
+ Customer: you said 2 GB on
+ Agent: hello 1 GB for $10 2 GB will be for 23 GB for $30 goes on like that
+ Customer: okay and how how do I sign into my online thing cuz I can't sign into my my to connect thing
+ Agent: so which phone number are you using
+ Customer: the 434-228-5246
+ Agent: okay and what's the address that you're getting
+ Customer: it's not it's not letting me type no more and after that
+ Agent: so when you go on the app
+ Agent: you have to you get two options over there when is the sign in and the second option is the signup option
+ Agent: so you have to click on the sign up option first
+ Agent: and it will ask you for your phone number or the same identifier
+ Agent: so you have to enter your phone number and you have to accept the terms and condition and then click on sign up
+ Agent: and then it will ask you to create a password for your account so first there will be a verification code that will be sent to you enter that code and not create a password and then you'll be able to log into the account
+ Customer: okay all right thank you
+ Agent: you're welcome ma'am so is there anything else I can help you with
+ Customer: no
+ Agent: all right then thank you so much for calling and reconnect to have a lovely day ahead
+ Customer: you too bye-bye
+ Agent: thank you bye-bye",,"The customer is trying to sign into their account online, but is having difficulty. They are also trying to find out how to add data to their account. The agent helps the customer by providing information about the data usage and how to sign into their account.","The customer is trying to sign into their account online, but is having difficulty. They are also trying to understand how much data they have left on their phone. The agent helps the customer by providing information about the data usage and how to sign into their account. The customer needs to sign up for the account and create a password."
+"Agent: Kenneth Lark could you help me with your account number and the phone number please
+ Customer: account number but the PIN number
+ Agent: no I need the account number
+ Agent: all your phone number please
+ Customer: 02 is the phone number 502-220-2693
+ Agent: thank you and could you help me with your name as well
+ Customer: Lamont Boxley
+ Agent: thank you mister Boxley so I do have your account in front of me now and verify yourself could you help me with the four digit PIN on your account
+ Customer: I think it's 1984
+ Agent: perfect that's the pin and are you the account holder
+ Customer: yes
+ Agent: great I do have your address as 3920 West Muhammad Ali Boulevard Louisville
+ Agent: Kentucky 402 12 will that be correct
+ Customer: yes
+ Agent: perfect let me also take a look at your email address
+ Agent: so mr. bump see I do have I do not have your email address could you help me with one please
+ Agent: sure
+ Customer: I don't have an email address I didn't I don't I don't want I don't prefer to use one but if you need one let's see I think I had a I can't remember what it is give me a second give me a moment
+ Customer: okay
+ Agent: yes please
+ Customer: I have a
+ Customer: I got a couple of things here that I attempted to use
+ Agent: uh-huh
+ Customer: you don't have anything as the email address for me
+ Agent: and there is no email address which has been updated years
+ Customer: okay
+ Customer: I want to try to use let's see tomorrow box e l a m a r b o x l e y
+ Customer: 92
+ Customer: no
+ Agent: so that's lemon Boxley 922
+ Customer: that's Lamar Lamar
+ Customer: boa
+ Agent: l a m e r b o x l e y
+ Customer: l o l o l a m a r l a m a r
+ Customer: okay
+ Agent: yes I got it sir Lamar Oxley
+ Customer: 92
+ Agent: 922
+ Customer: @gmail
+ Agent: thank you and do you have an alternate contact number sir
+ Customer: my mother's number my mother's number is 502-9213
+ Agent: history
+ Customer: 533
+ Customer: 1058
+ Agent: thank you so updated your email address as Lamar box
+ Agent: email
+ Agent: updated your alternate contact number as 502-533-1058 will that be right
+ Customer: yes
+ Agent: perfect so Mister Boxley how may I help you today
+ Customer: I was told that I had and I
+ Customer: I sought out and I was told that I had the last person I talked to
+ Customer: informed me that I had was eligible for the unlimited plan
+ Customer: and that's what I thought I had
+ Customer: but I have no internet service
+ Agent: are you not able to use the internet right now
+ Customer: no no not at all
+ Agent: I do apologize for that mister Boxley so how long it's been that you're not able to use the internet services
+ Customer: it's been a week let's see I just got this phone maybe a couple of weeks ago and it's been about
+ Customer: two weeks
+ Agent: so when you receive the phone you are not able to use the internet on it
+ Customer: yes I was initially able to use the internet on it but I was able to use it for maybe two days
+ Agent: okay so Mister Boxley I do apologize for this inconvenience
+ Agent: what we can do is we can go and do some network reset on your phone
+ Agent: and we'll have your services back all right so I would request you to be
+ Agent: please go back to settings
+ Customer: right not on this phone that I'm on
+ Agent: yes please
+ Customer: okay let's see I'm going to try to do that to see
+ Customer: okay
+ Agent: now could you go to system the second last option
+ Customer: okay
+ Agent: once you go to system you will see something with says advanced
+ Customer: okay
+ Agent: once you hit on Advance you will see reset options please hit on reset options
+ Customer: okay
+ Agent: and now the first option you will see is Wi-Fi mobile network and Bluetooth please return that and proceed with
+ Agent: the network reset
+ Customer: is this will reset all network settings including one of them over their Google
+ Agent: yes please
+ Customer: 82
+ Agent: yes please
+ Customer: okay it's saying confirm your pattern
+ Agent: you might have created a pattern
+ Agent: for your screen lock please enter that
+ Customer: okay
+ Agent: all right then once you go and do the network settings Mister Boxley you need to also restart your phone after this call so after this call you just have to restart your phone once after ten minutes you will be able to get
+ Agent: all the services back and I also see that according to the plan that you're on right now you do get unlimited calls unlimited text message and unlimited internet data okay
+ Customer: okay it says it's got an error saying go back to says reset
+ Customer: and
+ Customer: so do I do that now or do they watch him hang up
+ Agent: once we finish this call you need to reset the network settings and turn the phone off and turn it on against Boxley and I'm sure this will surely resolve all the issues you will be able to get back the internet surfing has opted this okay
+ Customer: okay
+ Agent: great and now as I said you are eligible to
+ Customer: actually turn it off turn the phone off
+ Agent: yeah turn it off and turn it on again after you do a network reset okay
+ Customer: I've done that I've done that
+ Customer: I don't understand is there something else I need to do
+ Agent: no after this call you just have to restart your phone sir
+ Customer: okay thank you
+ Agent: all right and in future also if your if your internet is running slow you can call us back and we will be able to help you with the data top up all right
+ Customer: okay thank you
+ Agent: thank you mister Boxley apart from this do you have any other questions for me today
+ Customer: not right now
+ Agent: all right. I'm also going to transfer you call for a short survey now and I would really appreciate your feedback on this okay
+ Customer: okay
+ Agent: all right so thank you so much for calling to connect have a blessed day bye-bye
+ Agent: thanks bye",,The customer is not able to use the internet on their phone. The agent helps the customer by resetting their phone and providing them with instructions on how to restart their phone. The agent also provides the customer with information on their unlimited data plan. The customer needs to restart their phone after this call.,The customer is having difficulty using their phone's internet service. The agent helps the customer by resetting their phone and providing them with instructions on how to restart their phone. The agent also provides the customer with information on their unlimited data plan. The customer needs to restart their phone after this call.
+"Agent: calling to connect you talking to Anthony can I get you through Conex phone number or the account number please
+ Customer: 324-475-1242
+ Agent: all right details coming up just give me a moment
+ Customer: yes
+ Agent: can I know your new home speaking with
+ Customer: James Charles
+ Agent: the team's I go to your account to be able for helping you with any further details first I need to verify your account
+ Customer: what you need
+ Agent: so can you help me with the four-digit security pin which you have set on this account
+ Agent: yes
+ Customer: I can't understand the 4-Digit pin 0420
+ Customer: 0420
+ Agent: let me check
+ Customer: 16
+ Customer: that's right
+ Agent: address is 113 Swan Street Enterprise Alabama 36330 is it right
+ Customer: correct yes that's right
+ Agent: thank you thank you for verifying James one last thing are you the authorized
+ Agent: listed on this account
+ Customer: thank you
+ Agent: right tell me how can I help you today
+ Agent: the phone
+ Customer: this phone y'all sent me is not working vehicle Jamie don't worry sometimes it works sometimes but sometimes you can't
+ Agent: oh the phone is not working
+ Customer: no
+ Agent: yeah sorry about that I'll check and I'll help you
+ Agent: what's happening to the phone like how it's not working
+ Customer: sometimes you let me down a bunch of bed and sometimes it won't
+ Agent: okay
+ Customer: yeah I can I can be going my email whatever and even email address in there
+ Customer: I go punch a button just go screen go away
+ Customer: is that clear to come in and restart it and the same thing take ten fifteen times make phone call
+ Agent: let me try to make a phone call what does it say exactly can you just try to make a phone calling oh yeah call
+ Agent: right
+ Customer: my apartment number I'll try to make the numbers and numbers will go pay it won't screen will pick up the number Verizon phone with the screen on it
+ Customer: getting the numbers right
+ Agent: means you're trying to say the screen is not working you're not able to type anything on the screen
+ Customer: not probably not properly it's not know sir
+ Agent: did you try to restart your phone so first of all sorry to hear about your problem I will definitely help you with this
+ Agent: I just want to ask you to try to restart the phone and check
+ Customer: okay love resell it
+ Customer: I moved to call with you
+ Agent: sorry
+ Customer: Hallelujah California
+ Agent: no I'm just asking you have you done that have you restarted the phone
+ Customer: I'll pay it off the charge again everything
+ Customer: the thing I know just when I called go
+ Agent: okay I restarted the phone already
+ Customer: is there
+ Agent: just a moment
+ Customer: no
+ Customer: so I know a little bit about the phone but I can't get you some that even try that right
+ Agent: just a moment again
+ Agent: I just want to ask you was there any physical damage or liquid damage to the phone by any chance was the phone dropped
+ Customer: not that I ain't drop your closer UPS drop it off but I can't drive it
+ Agent: all right no worries
+ Agent: after this call okay as you're calling me from the same number
+ Agent: you'll have to do a hard reset on the phone I'll explain you the steps
+ Agent: I can't because you're calling me from the same number you won't be able to do right now explain you the steps you need to do a hard reset but just want to let you know before doing a hard reset once you do a hard reset everything which is there in your phone if you have clicked any pictures or if the contacts are saved everything will be deleted
+ Customer: no
+ Agent: yeah
+ Agent: is it okay
+ Customer: sir
+ Agent: is that okay
+ Customer: I'll have you know
+ Customer: that's it.
+ Customer: and you and I'll do that
+ Agent: you know how to do a hard reset
+ Customer: yes it go to the city and go to factory data reset and wipe it clean
+ Agent: no no no no no no no not that to me
+ Agent: so I will let you know just give me a moment
+ Customer: okay
+ Customer: I think why don't you let me send it to y'all
+ Customer: give me
+ Agent: all right so after this call just turn off your phone completely
+ Customer: okay
+ Agent: what is the phone is turned off you need to press and hold the power button and the volume down button both the buttons at the same time
+ Customer: okay
+ Agent: when you do that the screen will appear which will say cloud mobile as soon as you see the cloud mobile you need
+ Agent: to leave this button both buttons at the same time you need the the buttons at the same time after that the screen will appear blue screen which will say uh a factory reset clear emmc okay so with the volume down button you need to click on clear emmc and with the power button you need to select just press the power button once wage
+ Agent: yeah the phone would be hard reset okay there is any issue that will get results so you'll have to do this after this call
+ Customer: okay I think I remember what you say
+ Agent: okay
+ Agent: no
+ Agent: must be able to help you all right
+ Customer: it was holding back to y'all
+ Agent: I understand I apologize but this is the process you'll have to do sir
+ Customer: okay and you guys don't fix it in what I do
+ Agent: if that doesn't work you call us we are here to help you
+ Agent: thank you
+ Customer: okay I'm going to try this man
+ Customer: no I tried to go to another company because Safe Link or something cuz I need two phones going to work if I can get one
+ Agent: I understand I apologize for that deal
+ Customer: I can just send you that y'all send me one that works
+ Agent: that doesn't happen sir if it's not working we will help you with this first you'll have to do a hard reset if it's completely not working still you're facing a problem after doing a troubleshoot we will definitely help you with the replacement of this but first you have to do this troubleshoot
+ Customer: what's that nothing was on the little man because the phone screen accessibility man he's on the bottom of the screen I can't get it go off
+ Agent: yeah so you need to turn off the phones and then you'll able to do it
+ Customer: all right that's right
+ Agent: okay no worries is there anything else I can help you
+ Customer: no
+ Customer: just going to send this phone back and I'll send me your pictures send him
+ Agent: all right then
+ Customer: hello ma'am
+ Agent: that's fine and then the else I can I help you
+ Customer: no
+ Agent: hello
+ Agent: you have a solid stay safe and things will call them to connect bye-bye",,The customer is having trouble with their phone and is asking for help. The agent helps the customer by providing instructions on how to do a hard reset on the phone. The agent also offers to send the customer a replacement phone if the original one is not working.,The customer is having trouble with their phone and needs help. The agent helps the customer by explaining the steps to do a hard reset on the phone. The agent also offers to send the customer a replacement phone if the current one is not working.
+"Agent: to connect your speaking with Alan could you help me with your phone number or an account number registered with truconnect
+ Customer: yeah the phone number is 626
+ Customer: 346
+ Customer: 6519
+ Customer: they pay
+ Agent: thank you for the phone number yeah
+ Customer: they taking my line away they I don't have phone anymore
+ Customer: could be time I close somewhere I get food to fruit connect
+ Agent: oh I do apologize for the inconvenience actually help you to get your issue resolved and to go ahead could you help me to know the name on the account
+ Customer: yeah but this is the 10th time I'm calling I called every day something's wrong with my phone and they can't correct the issue
+ Agent: I actually get it correct for you and yes I'm just go ahead
+ Customer: that's what they all say okay
+ Customer: need
+ Agent: your four-digit pin number set up on the account
+ Customer: 1234
+ Agent: and would you confirm the name mentioned with us
+ Customer: Helen k
+ Agent: and then we have your address here as the billing want to to 800 Mountain View Road which is California
+ Customer: no
+ Customer: no I put in my new address
+ Agent: and
+ Customer: I think everything's been wiped out
+ Customer: everything's been
+ Agent: I have your service I have in service address as 5604 Tower Road Riverside California 92506 is that one
+ Agent: okay
+ Customer: yeah I don't live in Mountain Road anymore
+ Agent: okay so do you want me to delete the billing address which is for the Mountain Road
+ Agent: okay
+ Customer: yeah take that off I don't live there anymore
+ Agent: and who is it told me that you're unable to use the services so what are the error messages that you are getting so whenever you try to call anyone you're getting connected to us
+ Customer: yes
+ Agent: and
+ Agent: the phone that you're using
+ Customer: it's I've been on the phone I've been on the phone to connect all week
+ Customer: since last week
+ Agent: yes
+ Agent: yeah I'm checking I do see that you had made us the call and let me check so what troubleshooting we had done on the device
+ Customer: obviously none because I can use my phone
+ Customer: they've taken my line away
+ Customer: no
+ Customer: it fell apart
+ Agent: so upon checking I do see I online is still activated it's not deactivated from our end your connection is still active uh but as it told me on the device that you're using that the same one we have provided to you okay watch
+ Customer: it fell apart
+ Agent: oh so which phone are you using
+ Customer: it broke
+ Customer: I'm using the Samsung
+ Customer: you tell him it's an unlocked
+ Agent: okay
+ Customer: phone this is her daughter it's a Samsung S10 unlocked phone I head
+ Agent: okay and okay so when you put the SIM card were you able to make the call from the device earlier
+ Agent: okay
+ Customer: yeah she was able to use the phone but
+ Customer: probably two weeks ago the phone is started to malfunction when I called her the phone goes straight to voicemail the call goes straight to voicemail off his clothes they dropped yeah. And I can't hit
+ Customer: I cannot text
+ Agent: oh
+ Agent: what I can do here is for you is that I do see that we have tried to restore the services also I will go ahead and I will send you a new SIM card
+ Customer: okay okay thank you
+ Agent: yes and I'll get the new new
+ Agent: God sent out to you which will be delivered at 5604 and which will take up to 7 to 10 working days
+ Customer: oh so I'll have no phones for 7 to 10 days
+ Agent: as there might be some issues with the SIM card and unfortunately your call drops every time you try to make a call so it's better we can go ahead and we can give you a new SIM card so that your issue gets resolved
+ Customer: yeah at 5
+ Customer: 804 Tower Road
+ Agent: that's correct that's the address we have
+ Customer: Riverside Riverside California 92506
+ Agent: that's correct so actually get the SIM card sent out to you on that address and once you get the same card you need to call us and we'll go ahead and activate the new SIM card for you okay Helen
+ Customer: yes thank you
+ Agent: and just to go ahead do you have any email address to mention on the account with us
+ Agent: okay
+ Customer: no I don't have an email address but my daughter my daughter has but
+ Agent: a not an issue do you have any alternate callback number to set up on the true connect with us
+ Customer: my daughter's phone
+ Agent: okay what will be the number
+ Customer: 95187
+ Customer: 79
+ Agent: thank you and he'll until I get the SIM card sent out to you can I place a call on hold for 2 minutes
+ Customer: yeah so I cannot use this phone at all now
+ Agent: you can you can use the phone you can try to check if the SIM card is working or not properly till the time you do not get the new SIM card
+ Customer: but it's not working yeah okay
+ Agent: or maybe can try know maybe you can just try to remove the SIM card and put it back again and check if you're able to get the network your services are active
+ Agent: waited the SIM card is also active but maybe there might be some issues with the same card and that's the reason you might not be able to get the network on the device
+ Customer: all right
+ Agent: yes but you can you can still try to use the SIM card just one or two times just to check if the signals are getting on the same card so that you can make a call
+ Customer: okie doke
+ Agent: okay
+ Customer: start the SIM card will work on this phone that my daughter gave me
+ Agent: yes as good as your daughter told me the same the phone is unlocked so the SIM card will definitely work on the phone
+ Customer: okay thank you
+ Agent: yes you just need to call us to get it activated right away once you received it
+ Customer: oh when I get your sim card
+ Agent: correct you need to call us and we will activate that with the same number
+ Customer: okay
+ Customer: okay well thank you so much so I I'll try and take this SIM card out because I can I can phone out I keep getting to connect home
+ Agent: yes you can you can do that as well or you can just wait till you do not get the new SIM card once you get the new SIM card can call us get the SIM card activated
+ Agent: and then you can surely put the new one
+ Customer: yes but you're saying is seven to ten days okay
+ Agent: yes as we do ship it from California itself so maybe you might get it sooner
+ Customer: yes
+ Customer: yeah
+ Customer: okie doke
+ Agent: apart from this do you have any other questions Helen
+ Customer: no that's it thank you so much
+ Agent: okay and as they do not have any further questions thank you for calling Tru connect and have a great day bye
+ Customer: okay
+ Customer: bye-bye",,"The customer is having trouble with their phone service and is asking for help. The agent helps the customer by sending them a new SIM card. The customer needs to wait for the new SIM card to be delivered, and then call the agent to activate it.","The customer is having difficulty using their phone and is requesting a new SIM card. The agent tries to restore the customer's services and sends them a new SIM card. The customer will have no phones for 7-10 days while the new card is being shipped. The customer needs to wait for a new SIM card to be delivered, and then call back to activate it."

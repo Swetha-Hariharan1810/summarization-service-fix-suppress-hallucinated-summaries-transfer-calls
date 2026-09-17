@@ -1,0 +1,28 @@
+Agent: thank you for calling telcomind my name's archie how can i help you 
+Customer: hi archie this is calling from the telephone banking department i have a customer calling in and she has some questions regarding her market insurance i have the account number if that's okay it's follow on the other line but i haven't verified the customer 
+Agent:can i have the security code 
+Customer:me one moment i'll 
+Agent:you 
+Agent: take the call have a good day thank you 
+Customer:too thank you 
+Agent: yes my name's archie and i am a representative here at the office in so my colleague told me you're calling in today to inquire about your mortgage and perhaps the insurance you have attached to the mortgage 
+Customer:we want to take steps to cancel the insurance and i just want to know what the steps we need to do to cancel the insurance policy 
+Agent: for sure so in order cancel your insurance we do need the applicant to sign on a form okay so i can prepare the form for you and have it signed and send it back to me and then i can pass it to the internal department for them to process the cancelation then 
+Customer: perfect okay 
+Agent: okay and i must say the insurance is actually single name based on 
+Customer: yes search and them so if you wanted to send it to me by email or is it possible by email it doesn't matter to sign it then 
+Agent:alright so i'll prepare the form for him and i'll send it to him sign it and email it back to me then 
+Customer:can we fax it back we're not quite sure how to 
+Agent: 
+Customer: okay good fax number we're not too good on this scan thing yet 
+Agent: okay no worries then fax it back so in my email signature there should be a fax number 
+Customer: 
+Agent:so and so there is a cancelation date on the insurance document so should i put it as tomorrow then would you be able to give me back the document by tomorrow 
+Customer: absolutely we can fax it back right away yeah 
+Agent: great so i'll set as tomorrow then so september ninth then 
+Customer: 
+Agent:alright is there anything no problem thank you for calling telcomind have a great day 
+Customer:yeah you too 
+Agent:bye 
+Customer: 
+Agent:
