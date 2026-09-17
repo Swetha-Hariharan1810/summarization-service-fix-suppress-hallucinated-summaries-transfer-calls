@@ -51,3 +51,131 @@ same class of mismatch.
 
 The first two are checkable with `dpkg -l zlib1g libsystemd0` against the ranges
 in the advisory text.
+
+# Findings that are real but blocked behind the torch upgrade
+
+These are not exceptions. They are genuine, they are marked `Resolvable: Yes`,
+and they cannot be fixed while `requirements.txt` pins `torch==2.0.0`. Recorded
+here so the next person does not spend the afternoon rediscovering the ceiling.
+
+## The measurement
+
+`torch.compiler` was introduced in torch 2.1. transformers began using it in
+4.50.0. Behaviour against torch 2.0.0, measured by building a small BERT,
+saving it, reloading it through `SentenceTransformer` and calling `encode()`:
+
+| transformers | result on torch 2.0.0 |
+| --- | --- |
+| 4.48.0 (current pin) | works - encode returns embeddings |
+| 4.49.0 | works |
+| 4.50.0 - 4.51.3 | `import transformers` succeeds, but importing `transformers.models.bert.modeling_bert` raises `AttributeError: module 'torch' has no attribute 'compiler'` |
+| 4.52.4 and later | as above, and additionally logs `Disabling PyTorch because PyTorch >= 2.1 is required but found 2.0.0`; `is_torch_available()` returns False, so the breakage is silent rather than loud |
+| 5.x | `import transformers` itself fails: `NameError: name 'nn' is not defined` |
+
+4.49.0 is therefore the highest usable version, and every outstanding
+transformers CVE needs 4.50.0 or later:
+
+| CVE | Severity | Needs |
+| --- | --- | --- |
+| CVE-2025-2099 | High | 4.50.0 |
+| CVE-2025-6638 | High | 4.53.0 |
+| CVE-2025-6921 | High | 4.53.0 |
+| CVE-2026-1839 | High | 5.0.0rc3 |
+| CVE-2026-4372 | High | 5.3.0 |
+| CVE-2026-5241 | Critical | 5.5.0 (invalid anyway - see above) |
+
+An earlier revision of the comment in `requirements.txt` blamed the
+`sentence-transformers==2.2.2` pin for this ceiling. That was wrong.
+`sentence-transformers` 2.3.1 and later dropped the `cached_download` import
+that tied us to `huggingface_hub` 0.25.2, so the hub constraint is gone - but
+lifting it only exposes torch as the binding constraint underneath. Note that
+`sentence-transformers` 3.0 and later import `transformers.trainer`, which also
+needs torch 2.1+, so 2.7.0 is the ceiling on that package for the same reason.
+
+## What the torch upgrade would clear
+
+`torch==2.0.0` -> `2.6.0` resolves CVE-2025-32434 (critical, 9.3),
+CVE-2024-31580 (high) and CVE-2024-31583 (high) directly, and unblocks all six
+transformers findings above - eight findings, two of them critical. It is by
+some distance the highest-value change left.
+
+This combination has been verified to work (small BERT saved, reloaded through
+`SentenceTransformer`, encoded):
+
+    torch==2.6.0  torchvision==0.21.0  transformers==5.17.0
+    sentence-transformers==6.0.1  numpy<2
+
+`torchvision 0.21.0` is the release that requires exactly `torch==2.6.0`, so
+pinning it also fixes the orphaned-torchvision problem described below.
+
+## Why the torch upgrade is not just a version bump
+
+torch 2.6.0 changes the default of `torch.load` from `weights_only=False` to
+`weights_only=True`. That change *is* the fix for CVE-2025-32434, and it breaks
+fairseq checkpoint loading.
+
+`summ_model.py` loads the summariser with
+`TransformerModel.from_pretrained(model_dir, checkpoint_file=...)`, which
+reaches `fairseq/checkpoint_utils.py`:
+
+    # load_checkpoint_to_cpu(), fairseq 0.12.2 line 315
+    state = torch.load(f, map_location=torch.device("cpu"))
+    # line 317 then reads state["args"], an argparse.Namespace
+
+Under torch 2.6.0 that raises `UnpicklingError: Weights only load failed`,
+because `argparse.Namespace` is not an allowlisted type. Reproduced directly:
+
+    torch 2.0.0  torch.load(path)  -> OK
+    torch 2.6.0  torch.load(path)  -> UnpicklingError
+
+So the upgrade needs a matching change in the `fairseqForkSepFix` fork, which
+is not tracked in this repository. Two ways to do it:
+
+1. `torch.load(..., weights_only=False)` - smallest change, but it re-opens the
+   exact code path CVE-2025-32434 describes. The scanner goes green while the
+   deserialisation risk at that call site stays.
+2. Allowlist the types instead and leave the new default alone:
+
+       torch.serialization.add_safe_globals([argparse.Namespace])
+
+   Verified to load the same checkpoint with `weights_only=True` still in
+   force. This keeps the protection the CVE fix introduced and is the better
+   option. A real checkpoint may need more entries than `argparse.Namespace`;
+   torch names the offending type in the error each time one is missing.
+
+Line numbers above are from upstream fairseq 0.12.2. The fork may differ -
+check it before patching. Because the model checkpoint has to be loaded to
+confirm any of this, the upgrade needs its own pull request with a
+before/after comparison of generated summaries.
+
+# Separately: torchvision is installed broken
+
+Not a scanner finding, but it falls out of the same investigation and affects
+any attempt to move transformers.
+
+`sentence-transformers==2.2.2` depends on a bare `torchvision`, so
+`pip install -r requirements.txt` resolves the newest one, and the later
+`pip install torch==2.0.0+cpu` step does not correct it. The result:
+
+    $ pip check
+    torchvision 0.29.0 has requirement torch==2.14.0, but you have torch 2.0.0.
+
+Because transformers imports torchvision for its image utilities, loading any
+model through it fails with `ModuleNotFoundError: No module named
+'torch._custom_ops'`. This is present on `main` today - it reproduces with an
+unmodified `requirements.txt` in the same install order the Dockerfile uses - so
+the `GENERAL_SUMMARY` code path cannot currently construct a
+`SentenceTransformer`. The default `GENERAL_SUMMARY=0` leaves
+`sentence_understanding` set to `None`, which is why the fairseq summarisation
+path is unaffected and the failure has gone unnoticed.
+
+It also explains the image size: the unpinned resolution pulls the CUDA build of
+torch plus its `nvidia-*` wheels, roughly 3 GB, which the CPU pin then orphans.
+
+Fix, when someone takes it: install the pinned trio before `requirements.txt`,
+so the resolver never sees an unconstrained `torchvision`.
+
+    pip install torch==2.0.0+cpu torchvision==0.15.1+cpu torchaudio==2.0.1 \
+        --extra-index-url https://download.pytorch.org/whl/cpu
+
+`torchvision 0.15.1` is the release that requires exactly `torch==2.0.0`.
