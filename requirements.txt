@@ -11,3 +11,7 @@ requests>=2.31.0
 cryptography>=41.0.0
 azure-storage-blob>=12.9.0
 azure-identity>=1.10.0
+# torch 2.0.0 (installed separately in docker/Dockerfile) is built against the
+# NumPy 1.x C ABI. NumPy 2.x makes those extensions fail to initialise with
+# "Failed to initialize NumPy: _ARRAY_API not found".
+numpy<2
