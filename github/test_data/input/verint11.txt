@@ -1,0 +1,65 @@
+Agent: like my name is Ethan can I take the phone number or the account number in question please
+ Customer: yes it's 251-209-0143
+ Agent: thank you and just give me a moment while I pull up your account information today
+ Customer: mhm
+ Agent: write the number that you just gave it to me is 351-209-0143 is that correct
+ Customer: no 251
+ Agent: two okay
+ Customer: 251-209-0143
+ Agent: thank you
+ Agent: right now can I help you with your name please
+ Customer: Angela Sal
+ Agent: thank you very much for the security reasons of your account could you please confirm the 4-Digit PIN code
+ Customer: 04/27
+ Agent: great thank you
+ Agent: and I see that the address on the account is 7520 Sharon court that still down
+ Customer: right
+ Agent: Al 36582 is that correct
+ Customer: correct
+ Agent: right now I'm speaking with the account holder today is that correct miserable
+ Customer: yes
+ Agent: thank you for all the details from the account how can I help you today
+ Agent: okay
+ Customer: okay I have I have data on my phone but when I go to use the internet it says connect to Wi-Fi why would I have to connect to the Wi-Fi
+ Agent: all right so
+ Agent: the phone is asking you to get connected to Wi-Fi is that correct
+ Customer: right right
+ Agent: okay so what are you trying to do are you trying to set up your phone or are you trying to use basic internet services
+ Customer: just used internet
+ Agent: okay right now
+ Agent: are you do you have okay you called
+ Customer: right
+ Agent: from the same number you said right is the internet connections which done on your phone is the data on
+ Customer: hold on 1 second
+ Agent: is the mobile data turned on
+ Customer: I can hear you just hold on 1 second
+ Customer: let me connect
+ Agent: yes
+ Customer: yes but the Wi-Fi is on also
+ Agent: that's why I disconnect Wi-Fi
+ Customer: all right
+ Agent: and when you're on the call with me will not be able to have an access to your internet services right
+ Agent: so what I would suggest you to do is turn off your Wi-Fi okay and your data mobile data should be switched on all right and then try and see if you're able to use internet connection if you're not able to use I'll give you a few steps so if you have a pen and paper ready
+ Agent: I would request you to please make a note of these steps
+ Customer: all right
+ Customer: go ahead
+ Agent: right you need to go to settings
+ Agent: then you'll need to go to system
+ Agent: an advance
+ Agent: then the next option you will see is reset options
+ Agent: right reset options the first thing that you
+ Customer: right
+ Agent: see is Wi-Fi mobile a Bluetooth you need to select that
+ Agent: once you select that the first option that you will get first a second option that you will get would be perform network reset on network reset
+ Agent: okay you select that the once you select once you click on that the network on your phone will go through a reset all right so once the reset is done them switch off your phone so it should turn back again and then try to use your internet services that should resolve your issue okay
+ Customer: okay all right thank you
+ Agent: and even if it's sold if it's not working after that after performing the network reset then I would request call us back from an alternate number maybe your landline number or maybe some other phone number that you can call us right so that we can follow more troubleshooting steps on your account okay
+ Customer: okay thank you
+ Agent: you're welcome and Michelle before I let you go today I would also like to inform you that as of now you are eligible to get a tablet at $10.01 all right so if you're looking forward to get a tablet what you can do is you can reach me on my truconnect app right once you register on my truck Connect app you will be able to purchase a tablet only at $10.01 as a one time payment okay wage
+ Customer: okay all right thank you
+ Agent: brilliant you're welcome so is there anything else that you would want to know me soul
+ Customer: no that's it thanks
+ Agent: do you have a wonderful day do you take care of yourself and thank you for calling to connect today
+ Agent: yes I would like to please disconnect the call ma'am
+ Customer: all right thank you
+ Agent: thank you

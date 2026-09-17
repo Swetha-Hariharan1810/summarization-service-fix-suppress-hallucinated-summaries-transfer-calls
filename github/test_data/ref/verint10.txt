@@ -1,0 +1,1 @@
+The customer was trying to access their online banking account, but was having difficulty. The agent asked for the customer's access number, the last ten digits of their bank card, and the date of birth. The customer was also asked to confirm their full name, verbal password, home address, and debit card expiry date.

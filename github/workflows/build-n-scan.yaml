@@ -1,0 +1,87 @@
+name: dev - Build Docker image and scan with Tenable
+on:
+  pull_request:
+    types: [labeled, ready_for_review, review_requested]
+    paths:
+      - ".github/workflows/build-n-scan.yaml"
+      - "src/**"
+      - "docker/**"
+
+  workflow_dispatch:
+    inputs:
+      debug_enabled:
+        type: boolean
+        description: "Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)"
+        required: false
+        default: false
+jobs:
+  build-n-scan:
+    name: build docker image and scan with Tenable
+
+    runs-on: ubuntu-latest-4-cores
+    environment: develop
+    permissions:
+      id-token: write
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-23.04]
+        python-version: ["3.9.15"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          token: ${{ secrets.GH_PAT }}
+
+
+      - name: Build docker image
+        id: build-docker-image
+        env:
+          REPOSITORY: summarization-service
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          git_hash=$(git rev-parse --short "${{ github.sha }}")
+          image_tag="pr-$PR_NUMBER-$git_hash"
+          docker build -t $REPOSITORY:$image_tag -f docker/Dockerfile .
+          echo "IMAGE_TAG=$image_tag" >> $GITHUB_OUTPUT
+
+      - name: Tenable Cloud Security - Container Image Scan
+        env:
+          IMAGE_TAG: ${{ steps.build-docker-image.outputs.IMAGE_TAG }}
+          REPOSITORY: summarization-service
+          TENABLE_API_TOKEN: ${{ secrets.TENABLE_API_TOKEN }}
+          TENABLE_API_URL: ${{ secrets.TENABLE_API_URL }}
+        run: |
+          set -euo pipefail
+          mkdir -p tenable-output
+          commit_user=$(git log -1 --pretty=format:'%an')
+          code_branch="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+
+          docker run --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            -v "$PWD/tenable-output:/docker-output" \
+            --pull=always \
+            tenable/cloud-security-scanner:latest container-image scan \
+              --api-token "$TENABLE_API_TOKEN" \
+              --api-url "$TENABLE_API_URL" \
+              --code-branch "$code_branch" \
+              --code-commit-hash "$GITHUB_SHA" \
+              --code-commit-user "$commit_user" \
+              --code-repository-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" \
+              --name "$REPOSITORY:$IMAGE_TAG" \
+              --fail-on-min-severity high \
+              --output-file-formats j-unit \
+              --output-path /docker-output
+
+      - name: Upload Tenable results
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: tenable-results
+          path: tenable-output/results.junit.xml
+          if-no-files-found: warn
+      - name: "Setup tmate session"
+        uses: mxschmitt/action-tmate@v3
+        if: ${{ failure() && inputs.debug_enabled }}

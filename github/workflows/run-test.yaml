@@ -1,0 +1,104 @@
+name: dev - Run unit tests with pytest
+on:
+  pull_request:
+    types: [labeled, ready_for_review, review_requested]
+    paths:
+      - ".github/workflows/*"
+      - "src/**"
+      - "docker/**"
+
+
+  workflow_dispatch:
+    inputs:
+      debug_enabled:
+        type: boolean
+        description: "Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)"
+        required: false
+        default: false
+jobs:
+  test-with-docker:
+    name: run tests
+    runs-on: ubuntu-latest-4-cores
+    environment: develop
+    permissions:
+      id-token: write
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-20.04]
+        python-version: ["3.9.15"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          token: ${{ secrets.GH_PAT }}
+      - name: Azure login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: docker-compose build container and run unit tests
+        id: unit-test
+        env:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+        run: |
+          export NUM_THREADS=$(nproc)
+          docker compose -f docker/docker-compose.ci.yaml build
+          docker compose -f docker/docker-compose.ci.yaml run summ-test
+
+      - name: test with rmq
+        id: integration-test-rmq
+        env:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+        run: |
+          export NUM_THREADS=$(nproc)
+          docker compose -f docker/docker-compose.ci.yaml up summ-service &
+          sleep 30
+          docker compose -f docker/docker-compose.ci.yaml logs summ-service
+          docker compose -f docker/docker-compose.ci.yaml up --exit-code-from send-msg -- send-msg
+
+      - name: Tenable Cloud Security - Container Image Scan
+        if: ${{ success() }}
+        env:
+          TENABLE_API_TOKEN: ${{ secrets.TENABLE_API_TOKEN }}
+          TENABLE_API_URL: ${{ secrets.TENABLE_API_URL }}
+        run: |
+          set -euo pipefail
+          mkdir -p tenable-output
+          commit_user=$(git log -1 --pretty=format:'%an')
+          code_branch="${GITHUB_HEAD_REF:-${GITHUB_REF_NAME}}"
+
+          docker run --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            -v "$PWD/tenable-output:/docker-output" \
+            --pull=always \
+            tenable/cloud-security-scanner:latest container-image scan \
+              --api-token "$TENABLE_API_TOKEN" \
+              --api-url "$TENABLE_API_URL" \
+              --code-branch "$code_branch" \
+              --code-commit-hash "$GITHUB_SHA" \
+              --code-commit-user "$commit_user" \
+              --code-repository-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" \
+              --name summarization-service:ci \
+              --fail-on-min-severity high \
+              --output-file-formats j-unit \
+              --output-path /docker-output
+
+      - name: Upload Tenable results
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: tenable-results-run-test
+          path: tenable-output/results.junit.xml
+          if-no-files-found: warn
+      - name: "Setup tmate session"
+        uses: mxschmitt/action-tmate@v3
+        if: ${{ failure() && inputs.debug_enabled }}
