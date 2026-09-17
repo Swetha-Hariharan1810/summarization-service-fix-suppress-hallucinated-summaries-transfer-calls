@@ -49,8 +49,8 @@ jobs:
           AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
         run: |
           export NUM_THREADS=$(nproc)
-          docker-compose -f docker/docker-compose.ci.yaml build
-          docker-compose -f docker/docker-compose.ci.yaml run summ-test
+          docker compose -f docker/docker-compose.ci.yaml build
+          docker compose -f docker/docker-compose.ci.yaml run summ-test
 
       - name: test with rmq
         id: integration-test-rmq
@@ -60,10 +60,10 @@ jobs:
           AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
         run: |
           export NUM_THREADS=$(nproc)
-          docker-compose -f docker/docker-compose.ci.yaml up summ-service &
+          docker compose -f docker/docker-compose.ci.yaml up summ-service &
           sleep 30
-          docker-compose -f docker/docker-compose.ci.yaml logs summ-service
-          docker-compose -f docker/docker-compose.ci.yaml up --exit-code-from send-msg -- send-msg
+          docker compose -f docker/docker-compose.ci.yaml logs summ-service
+          docker compose -f docker/docker-compose.ci.yaml up --exit-code-from send-msg -- send-msg
       - name: "Setup tmate session"
         uses: mxschmitt/action-tmate@v3
         if: ${{ failure() && inputs.debug_enabled }}

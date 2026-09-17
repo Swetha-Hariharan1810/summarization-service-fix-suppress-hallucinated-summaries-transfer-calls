@@ -198,24 +198,37 @@ class SummModel(torch.nn.Module):
                 model_dir.mkdir(parents=True, exist_ok=True)
                 open(model_dir / f"download_job_cnt_{download_job_cnt}", "a").close()
                 models_zip_file = model_dir / "model.zip"
-                if config.model_url.startswith("https://"):
-                    az_util.download_file(config.model_url, str(models_zip_file))
-                elif config.model_url.startswith("s3://"):
-                    s3_util.download_file(config.model_url, str(models_zip_file))
-                else:
-                    raise ValueError("Model url must start with https:// or s3://")
+                try:
+                    if config.model_url.startswith("https://"):
+                        az_util.download_file(config.model_url, str(models_zip_file))
+                    elif config.model_url.startswith("s3://"):
+                        s3_util.download_file(config.model_url, str(models_zip_file))
+                    else:
+                        raise ValueError(
+                            "Model url must start with https:// or s3://"
+                        )
 
-                shutil.unpack_archive(models_zip_file, model_dir)
-                # unpack bpe and similarity model
-                if (model_dir / "gpt2_bpe.zip").exists():
-                    shutil.unpack_archive(model_dir / "gpt2_bpe.zip", model_dir)
-                    (model_dir / "gpt2_bpe.zip").unlink()
-                if (model_dir / "task_verification_model.zip").exists():
-                    shutil.unpack_archive(
-                        model_dir / "task_verification_model.zip", model_dir
-                    )
-                    (model_dir / "task_verification_model.zip").unlink()
-                models_zip_file.unlink()
+                    shutil.unpack_archive(models_zip_file, model_dir)
+                    # unpack bpe and similarity model
+                    if (model_dir / "gpt2_bpe.zip").exists():
+                        shutil.unpack_archive(model_dir / "gpt2_bpe.zip", model_dir)
+                        (model_dir / "gpt2_bpe.zip").unlink()
+                    if (model_dir / "task_verification_model.zip").exists():
+                        shutil.unpack_archive(
+                            model_dir / "task_verification_model.zip", model_dir
+                        )
+                        (model_dir / "task_verification_model.zip").unlink()
+                    models_zip_file.unlink()
+                except Exception:
+                    # model_dir is created before the download starts, and its
+                    # mere existence is what tells every other process that a
+                    # download is in progress. Leaving it behind after a failure
+                    # sends them into the wait loop below for a file that is
+                    # never coming, which buries the real error under minutes of
+                    # "Waiting for model file to be downloaded".
+                    logger.exception("Model download failed; removing %s", model_dir)
+                    shutil.rmtree(model_dir, ignore_errors=True)
+                    raise
                 break
             logger.info(
                 f"Waiting for model file to be downloaded ... {download_wait_cnt*10}"
