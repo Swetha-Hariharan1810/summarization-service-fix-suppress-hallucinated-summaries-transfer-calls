@@ -16,13 +16,11 @@ services:
       - SUMM_MODEL_NAME=finetune.v9.fix.bh.review.pre2.lr.2e-05.tnu.1500.checkpoint_best
     restart: 'no'
     tty: true
-    # keeps running container after exit
     entrypoint: [ "/bin/sh", "-c" ]
-    command: tail -f /dev/null
-    # command:
-    #   - |
-    #     pip install -r src/summ_service/test/requirements.txt --break-system-packages
-    #     pytest -x -vv --log-cli-level=WARNING -s src/summ_service/test/test_summ.py
+    command:
+      - |
+        pip install -r src/summ_service/test/requirements.txt
+        pytest -x -vv --log-cli-level=WARNING -s src/summ_service/test/test_summ.py
 
   summ-service:
     user: "999:999"
