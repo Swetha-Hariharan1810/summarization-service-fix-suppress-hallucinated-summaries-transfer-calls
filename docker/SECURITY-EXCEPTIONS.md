@@ -96,8 +96,57 @@ needs torch 2.1+, so 2.7.0 is the ceiling on that package for the same reason.
 
 `torch==2.0.0` -> `2.6.0` resolves CVE-2025-32434 (critical, 9.3),
 CVE-2024-31580 (high) and CVE-2024-31583 (high) directly, and unblocks all six
-transformers findings above. It is the single highest-value change left, and it
-belongs in its own pull request with its own inference-output comparison.
+transformers findings above - eight findings, two of them critical. It is by
+some distance the highest-value change left.
+
+This combination has been verified to work (small BERT saved, reloaded through
+`SentenceTransformer`, encoded):
+
+    torch==2.6.0  torchvision==0.21.0  transformers==5.17.0
+    sentence-transformers==6.0.1  numpy<2
+
+`torchvision 0.21.0` is the release that requires exactly `torch==2.6.0`, so
+pinning it also fixes the orphaned-torchvision problem described below.
+
+## Why the torch upgrade is not just a version bump
+
+torch 2.6.0 changes the default of `torch.load` from `weights_only=False` to
+`weights_only=True`. That change *is* the fix for CVE-2025-32434, and it breaks
+fairseq checkpoint loading.
+
+`summ_model.py` loads the summariser with
+`TransformerModel.from_pretrained(model_dir, checkpoint_file=...)`, which
+reaches `fairseq/checkpoint_utils.py`:
+
+    # load_checkpoint_to_cpu(), fairseq 0.12.2 line 315
+    state = torch.load(f, map_location=torch.device("cpu"))
+    # line 317 then reads state["args"], an argparse.Namespace
+
+Under torch 2.6.0 that raises `UnpicklingError: Weights only load failed`,
+because `argparse.Namespace` is not an allowlisted type. Reproduced directly:
+
+    torch 2.0.0  torch.load(path)  -> OK
+    torch 2.6.0  torch.load(path)  -> UnpicklingError
+
+So the upgrade needs a matching change in the `fairseqForkSepFix` fork, which
+is not tracked in this repository. Two ways to do it:
+
+1. `torch.load(..., weights_only=False)` - smallest change, but it re-opens the
+   exact code path CVE-2025-32434 describes. The scanner goes green while the
+   deserialisation risk at that call site stays.
+2. Allowlist the types instead and leave the new default alone:
+
+       torch.serialization.add_safe_globals([argparse.Namespace])
+
+   Verified to load the same checkpoint with `weights_only=True` still in
+   force. This keeps the protection the CVE fix introduced and is the better
+   option. A real checkpoint may need more entries than `argparse.Namespace`;
+   torch names the offending type in the error each time one is missing.
+
+Line numbers above are from upstream fairseq 0.12.2. The fork may differ -
+check it before patching. Because the model checkpoint has to be loaded to
+confirm any of this, the upgrade needs its own pull request with a
+before/after comparison of generated summaries.
 
 # Separately: torchvision is installed broken
 
